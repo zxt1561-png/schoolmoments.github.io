@@ -1,0 +1,2244 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#4CAF50">
+<title>校园瞬间 · Campus Moments</title>
+
+<!-- ===== Google Fonts ===== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet">
+
+<!-- ===== QRCode.js (生成点位二维码) ===== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<!-- =========================================================
+     SVG 图标库：全部以 <symbol> 定义，通过 <use href="#icon-xxx"> 复用
+     规范：viewBox 0 0 24 24 / fill none / stroke currentColor / width 2
+     ========================================================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<defs>
+  <!-- ---- 点位图标（14个） ---- -->
+  <symbol id="icon-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11 12 4l8 7"/><path d="M6 10v9h12v-9"/><path d="M9 14h6M9 17h6"/>
+  </symbol>
+  <symbol id="icon-junior" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11 12 4l8 7"/><path d="M6 10v9h12v-9"/><path d="M12 18v-5M9.5 15.5 12 13l2.5 2.5"/>
+  </symbol>
+  <symbol id="icon-senior" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11 12 4l8 7"/><path d="M6 10v9h12v-9"/><path d="M12 18c-2.2 0-3.5-1.4-3.5-3.4 2 0 3.5 1.4 3.5 3.4Zm0 0c0-2 1.4-3.5 3.4-3.5 0 2-1.4 3.5-3.4 3.5Z"/>
+  </symbol>
+  <symbol id="icon-admin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 21V4M5 4h8l-1.6 2.4L13 9H5"/><path d="M9 21v-5h4v5"/><path d="M16 21v-8h4v8M14 21h8"/>
+  </symbol>
+  <symbol id="icon-theater" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 5h8v5.5a4 4 0 0 1-8 0Z"/><path d="M5.6 8h.01M8.4 8h.01"/><path d="M13 5h8v5.5a4 4 0 0 1-8 0Z"/><path d="M15.6 8h.01M18.4 8h.01"/><path d="M5 16.5c1 1 2 1 3 0M16 16.5c1 1 2 1 3 0"/>
+  </symbol>
+  <symbol id="icon-boy_dorm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 18v-5h10a4 4 0 0 1 4 4v1"/><path d="M3 13V9M3 18h14M6 13a1.5 1.5 0 1 1 3 0"/><circle cx="18.5" cy="5.5" r="2"/><path d="M20 4l2-2M22 2h-2.6M22 2v2.6"/>
+  </symbol>
+  <symbol id="icon-girl_dorm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 18v-5h10a4 4 0 0 1 4 4v1"/><path d="M3 13V9M3 18h14M6 13a1.5 1.5 0 1 1 3 0"/><circle cx="19" cy="5" r="2"/><path d="M19 7v3.5M17.5 9h3"/>
+  </symbol>
+  <symbol id="icon-gym" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="8.5" cy="7.5" rx="4" ry="5"/><path d="M8.5 12.5 7 21"/><path d="M5.5 6h6M8.5 3v9"/><circle cx="17.5" cy="16.5" r="3.5"/>
+  </symbol>
+  <symbol id="icon-football" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="11" r="7"/><path d="M12 7.5l3 2.2-1.1 3.5h-3.8L9 9.7z"/><path d="M3 20h18"/>
+  </symbol>
+  <symbol id="icon-basketball1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="5" y="3" width="14" height="8" rx="1.5"/><rect x="9.5" y="6" width="5" height="3.5" rx="1"/><path d="M9.5 11v3.5l2.5 2.5 2.5-2.5V11M12 11v6"/>
+  </symbol>
+  <symbol id="icon-basketball2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4v16M6 6.4c3.2 2.2 3.2 9 0 11.2M18 6.4c-3.2 2.2-3.2 9 0 11.2"/>
+  </symbol>
+  <symbol id="icon-tennis" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="9.5" cy="8.5" rx="4.5" ry="5.5"/><path d="M6 8.5h7M9.5 4v9M9.5 14 8 21"/><circle cx="18" cy="16" r="2.5"/>
+  </symbol>
+  <symbol id="icon-equestrian" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 21c0-4 .8-7 2.6-9C8.8 9.6 9.8 7.6 12 6.6L13 3l2.4 2 2.6-.8c.4 2-.2 3.8-1.4 4.8 1.8 1.8 2.8 4.4 2.8 7"/><path d="M8.6 12h.01"/><path d="M3 19h4M3 16.5v5M5.5 16.5v5"/>
+  </symbol>
+  <symbol id="icon-fitness" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 9v6M3 7.5v9M19 9v6M21 7.5v9M5 12h14"/>
+  </symbol>
+
+  <!-- ---- 新增点位图标 ---- -->
+  <!-- 咖啡厅 -->
+  <symbol id="icon-cafe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 3c0-1 1.5-1 2.5-1s2.5 0 2.5 1"/>
+    <path d="M6 7h12l-2 11a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2L6 7Z"/>
+    <path d="M18 10h1.5a2 2 0 0 1 0 4H18"/>
+    <path d="M7 21h10"/>
+  </symbol>
+  <!-- 主楼 / 教学楼 -->
+  <symbol id="icon-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 21V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v16"/>
+    <path d="M3 21h18"/>
+    <path d="M9 21v-5h6v5"/>
+    <path d="M7 7h2M7 11h2M7 15h2M15 7h2M15 11h2M15 15h2M11 7h2M11 11h2"/>
+  </symbol>
+
+  <!-- ---- UI 图标 ---- -->
+  <symbol id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/>
+  </symbol>
+  <symbol id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+  </symbol>
+  <symbol id="icon-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 18l-6-6 6-6"/>
+  </symbol>
+  <symbol id="icon-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L8 18l-4 1 1-4Z"/>
+  </symbol>
+  <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+  </symbol>
+  <symbol id="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3v12M7 10l5 5 5-5M4 20h16"/>
+  </symbol>
+  <symbol id="icon-lang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/>
+  </symbol>
+  <symbol id="icon-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 21s6.5-5.8 6.5-11A6.5 6.5 0 0 0 5.5 10c0 5.2 6.5 11 6.5 11Z"/><circle cx="12" cy="10" r="2.4"/>
+  </symbol>
+  <symbol id="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 5v14M5 12h14"/>
+  </symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 13l4 4L19 7"/>
+  </symbol>
+  <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 6l12 12M18 6 6 18"/>
+  </symbol>
+  <symbol id="icon-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="M21 16l-5-5L5 20"/>
+  </symbol>
+  <symbol id="icon-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><path d="M16 5.2a3.2 3.2 0 0 1 0 6.1M21.5 20c0-2.4-1.2-4-3.3-4.8"/>
+  </symbol>
+  <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 21s6.5-5.8 6.5-11A6.5 6.5 0 0 0 5.5 10c0 5.2 6.5 11 6.5 11Z"/><circle cx="12" cy="10" r="2.4"/>
+  </symbol>
+  <symbol id="icon-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3c.6 4.2 1.8 5.4 6 6-4.2.6-5.4 1.8-6 6-.6-4.2-1.8-5.4-6-6 4.2-.6 5.4-1.8 6-6Z"/>
+  </symbol>
+</defs>
+</svg>
+
+<style>
+/* =========================================================
+   CSS Variables · 主题色板（白天 / 黑夜）
+   ========================================================= */
+:root{
+  --bg: linear-gradient(150deg,#FDFAF5 0%,#FAF7F0 50%,#F7F3EA 100%);
+  --bg-solid:#FAF7F0;
+  --card:rgba(255,255,255,0.72);
+  --card-solid:#ffffff;
+  --card-border:rgba(255,255,255,0.88);
+  --card-border-2:rgba(76,175,80,0.10);
+  --green:#4CAF50;
+  --green-d1:#1B5E20; --green-d2:#2E7D32; --green-d3:#388E3C;
+  --green-l1:#81C784; --green-l2:#A5D6A7; --green-l3:#C8E6C9;
+  --text:#2E4A32;
+  --text-2:#4E7A52;
+  --text-mute:#90A4AE;
+  --grad-btn:linear-gradient(135deg,#4CAF50 0%,#43A047 55%,#388E3C 100%);
+  --grad-icon:linear-gradient(135deg,#66BB6A 0%,#43A047 100%);
+  --shadow-card:0 4px 24px rgba(76,175,80,0.09), 0 1.5px 6px rgba(0,0,0,0.04);
+  --shadow-hover:0 12px 40px rgba(76,175,80,0.16), 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-pin:0 4px 14px rgba(27,94,32,0.18), 0 1px 4px rgba(0,0,0,0.08);
+  --overlay:rgba(40,55,42,0.28);
+  --header-bg:rgba(253,250,245,0.72);
+  --chip-bg:rgba(76,175,80,0.10);
+  --field-bg:rgba(255,255,255,0.65);
+  --field-border:rgba(76,175,80,0.22);
+  --slogan-1:#1B5E20; --slogan-2:#2E7D32; --slogan-3:#388E3C; --slogan-en:#2E7D32;
+}
+html[data-theme="dark"]{
+  --bg:linear-gradient(150deg,#0D1F10 0%,#1A2A1F 50%,#162318 100%);
+  --bg-solid:#13231A;
+  --card:rgba(26,42,31,0.82);
+  --card-solid:#1E3024;
+  --card-border:rgba(129,199,132,0.16);
+  --card-border-2:rgba(102,187,106,0.14);
+  --green:#66BB6A;
+  --text:#C8E6C9;
+  --text-2:#A5D6A7;
+  --text-mute:#7C9A86;
+  --grad-btn:linear-gradient(135deg,#66BB6A 0%,#4CAF50 55%,#43A047 100%);
+  --grad-icon:linear-gradient(135deg,#81C784 0%,#4CAF50 100%);
+  --shadow-card:0 6px 26px rgba(0,0,0,0.34), 0 1.5px 6px rgba(0,0,0,0.24);
+  --shadow-hover:0 14px 44px rgba(0,0,0,0.46), 0 4px 16px rgba(0,0,0,0.3);
+  --shadow-pin:0 4px 14px rgba(0,0,0,0.45);
+  --overlay:rgba(0,0,0,0.5);
+  --header-bg:rgba(13,31,16,0.66);
+  --chip-bg:rgba(102,187,106,0.16);
+  --field-bg:rgba(255,255,255,0.04);
+  --field-border:rgba(129,199,132,0.22);
+  --slogan-1:#A5D6A7; --slogan-2:#81C784; --slogan-3:#66BB6A; --slogan-en:#81C784;
+}
+
+/* =========================================================
+   Base
+   ========================================================= */
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{margin:0;padding:0;}
+body{
+  font-family:'Quicksand','Noto Sans SC',system-ui,-apple-system,sans-serif;
+  color:var(--text);
+  background:var(--bg) fixed;
+  min-height:100vh;
+  min-height:100dvh;
+  line-height:1.55;
+  transition:background-color .28s ease,color .28s ease;
+  overflow-x:hidden;
+  -webkit-text-size-adjust:100%;
+}
+/* 平滑主题过渡（限定属性，避免布局抖动） */
+body,.card,.btn,.chip,.pin,.field,.header,.sheet,.modal-card{
+  transition:background-color .28s ease,color .28s ease,border-color .28s ease,box-shadow .28s ease,transform .18s ease;
+}
+img{max-width:100%;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+a{color:inherit;text-decoration:none;}
+:focus-visible{outline:2.5px solid var(--green);outline-offset:2px;border-radius:8px;}
+.icon{width:1em;height:1em;display:inline-block;vertical-align:-0.125em;fill:none;}
+.wrap{max-width:760px;margin:0 auto;padding:0 18px;}
+.hidden{display:none !important;}
+.sr-tap{min-width:44px;min-height:44px;}
+
+/* Scrollbar hide */
+.no-scrollbar{scrollbar-width:none;-ms-overflow-style:none;}
+.no-scrollbar::-webkit-scrollbar{display:none;}
+
+/* =========================================================
+   Header
+   ========================================================= */
+.header{
+  position:sticky;top:0;z-index:100;
+  background:var(--header-bg);
+  -webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--card-border-2);
+}
+.header-inner{
+  max-width:760px;margin:0 auto;padding:10px 16px;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+}
+.brand{display:flex;align-items:center;gap:11px;min-height:44px;cursor:pointer;user-select:none;}
+.brand-logo{
+  width:40px;height:40px;border-radius:13px;flex:none;
+  background:var(--grad-icon);
+  display:grid;place-items:center;color:#fff;
+  box-shadow:0 4px 14px rgba(76,175,80,0.32);
+}
+.brand-logo .icon{width:23px;height:23px;stroke-width:2.1;}
+.brand-name{display:flex;flex-direction:column;line-height:1.1;}
+.brand-name b{font-weight:800;font-size:1.06rem;letter-spacing:.2px;}
+.brand-name span{font-size:.66rem;color:var(--text-mute);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
+.header-actions{display:flex;align-items:center;gap:8px;}
+.icon-btn{
+  min-width:44px;min-height:44px;height:44px;
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  padding:0 12px;border-radius:999px;
+  background:var(--card);border:1px solid var(--card-border);
+  color:var(--text-2);font-weight:800;font-size:.82rem;
+  box-shadow:var(--shadow-card);
+}
+.icon-btn .icon{width:19px;height:19px;}
+.icon-btn:hover{transform:translateY(-2px);color:var(--green-d2);}
+html[data-theme="dark"] .icon-btn:hover{color:var(--green);}
+.icon-btn:active{transform:scale(.95);}
+.icon-btn.square{padding:0;width:44px;}
+
+/* =========================================================
+   Home · Slogan
+   ========================================================= */
+main{padding-bottom:64px;}
+.hero{padding:46px 0 26px;text-align:center;}
+.slogan{
+  font-family:'Noto Serif SC','Songti SC','SimSun','STSong',serif;
+  font-weight:900;
+  font-size:clamp(2.8rem,11vw,5.2rem);
+  line-height:1.05;letter-spacing:.04em;
+  margin:0;white-space:nowrap;
+}
+.slogan .w1{color:var(--slogan-1);}
+.slogan .w2{color:var(--slogan-2);margin:0 .12em;}
+.slogan .w3{color:var(--slogan-3);}
+.slogan.en{color:var(--slogan-en);letter-spacing:.01em;}
+.hero-sub{
+  margin:16px auto 0;max-width:30ch;
+  color:var(--text-2);font-weight:700;font-size:1rem;opacity:.92;
+}
+
+/* Section title */
+.sec{margin-top:34px;}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;margin:0 2px 14px;}
+.sec-title{font-weight:900;font-size:1.18rem;letter-spacing:.2px;display:flex;align-items:center;gap:8px;}
+.sec-title .icon{width:20px;height:20px;color:var(--green-d2);}
+html[data-theme="dark"] .sec-title .icon{color:var(--green);}
+.sec-hint{font-size:.78rem;color:var(--text-mute);font-weight:700;}
+
+/* =========================================================
+   Home · 全校最新瞬间（横向滚动）
+   ========================================================= */
+.rail{
+  display:flex;gap:14px;overflow-x:auto;padding:4px 18px 14px;margin:0 -18px;
+  scroll-snap-type:x mandatory;
+}
+.rail-card{
+  scroll-snap-align:start;flex:0 0 78%;max-width:300px;
+  background:var(--card);border:1px solid var(--card-border);
+  border-radius:22px;padding:16px 17px;box-shadow:var(--shadow-card);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  display:flex;flex-direction:column;gap:10px;cursor:pointer;
+}
+.rail-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);}
+.rail-card:active{transform:scale(.98);}
+.chip{
+  display:inline-flex;align-items:center;gap:6px;align-self:flex-start;
+  background:var(--chip-bg);color:var(--green-d2);
+  font-weight:800;font-size:.74rem;padding:5px 11px;border-radius:999px;
+}
+html[data-theme="dark"] .chip{color:var(--green-l1);}
+.chip .icon{width:14px;height:14px;}
+.rail-text{
+  font-size:.96rem;color:var(--text);line-height:1.5;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+.meta-time{display:flex;align-items:center;gap:5px;color:var(--text-mute);font-size:.76rem;font-weight:700;}
+.meta-time .icon{width:13px;height:13px;}
+
+/* =========================================================
+   Home · 校园平面图 + 覆盖引脚
+   ========================================================= */
+.map-wrap{
+  position:relative;border-radius:36px;overflow:hidden;
+  box-shadow:var(--shadow-card);border:1px solid var(--card-border);
+  background:var(--card);
+}
+.map-wrap img{width:100%;display:block;border-radius:inherit;}
+.map-fallback{
+  display:none;width:100%;aspect-ratio:1060/1160;
+  background:
+    radial-gradient(120% 90% at 30% 18%,rgba(165,214,167,.55),transparent 60%),
+    repeating-linear-gradient(45deg,rgba(76,175,80,.06) 0 14px,transparent 14px 28px),
+    var(--bg-solid);
+  place-items:center;text-align:center;color:var(--text-2);padding:24px;
+}
+.map-wrap.fallback img{display:none;}
+.map-wrap.fallback .map-fallback{display:grid;}
+.map-fallback .icon{width:42px;height:42px;color:var(--green);opacity:.7;margin-bottom:10px;}
+.map-fallback b{font-weight:800;font-size:1rem;}
+.map-fallback small{display:block;margin-top:6px;font-size:.78rem;color:var(--text-mute);font-weight:700;}
+
+/* 覆盖引脚（绝对定位，百分比） */
+.pin{
+  position:absolute;transform:translate(-50%,-100%);
+  display:flex;flex-direction:column;align-items:center;cursor:pointer;
+  z-index:5;
+}
+.pin-dot{
+  width:38px;height:38px;border-radius:50%;
+  background:var(--card-solid);
+  display:grid;place-items:center;color:var(--green-d2);
+  box-shadow:var(--shadow-pin);border:2px solid #fff;
+}
+html[data-theme="dark"] .pin-dot{border-color:rgba(255,255,255,.12);color:var(--green-l1);}
+.pin-dot .icon{width:21px;height:21px;}
+.pin-tip{
+  width:0;height:0;margin-top:-2px;
+  border-left:7px solid transparent;border-right:7px solid transparent;
+  border-top:9px solid var(--card-solid);
+  filter:drop-shadow(0 3px 2px rgba(27,94,32,.12));
+}
+.pin-label{
+  position:absolute;bottom:calc(100% + 4px);left:50%;transform:translateX(-50%) translateY(4px);
+  background:var(--green-d2);color:#fff;font-weight:800;font-size:.72rem;
+  padding:4px 9px;border-radius:8px;white-space:nowrap;
+  opacity:0;pointer-events:none;transition:opacity .16s ease,transform .16s ease;
+  box-shadow:0 4px 12px rgba(0,0,0,.2);
+}
+html[data-theme="dark"] .pin-label{background:var(--green);color:#06140A;}
+.pin:hover{z-index:9;}
+.pin:hover .pin-dot{background:var(--grad-icon);color:#fff;transform:scale(1.18);}
+.pin:hover .pin-tip{border-top-color:#43A047;}
+.pin:hover .pin-label{opacity:1;transform:translateX(-50%) translateY(0);}
+.pin:active .pin-dot{transform:scale(1.04);}
+
+/* 坐标拾取模式 */
+.map-wrap.picking{cursor:crosshair;}
+.map-wrap.picking .pin{pointer-events:none;opacity:.45;}
+.pick-marker{
+  position:absolute;width:16px;height:16px;border-radius:50%;
+  background:#E53935;border:2px solid #fff;transform:translate(-50%,-50%);
+  box-shadow:0 2px 8px rgba(0,0,0,.4);z-index:20;pointer-events:none;
+}
+
+/* =========================================================
+   Home · 点位卡片网格
+   ========================================================= */
+.area-label{
+  font-size:.7rem;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;
+  color:var(--text-mute);margin:26px 2px 12px;
+}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;}
+.point-card{
+  position:relative;background:var(--card);border:1px solid var(--card-border);
+  border-radius:20px;padding:15px;box-shadow:var(--shadow-card);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  cursor:pointer;display:flex;flex-direction:column;gap:9px;min-height:44px;
+}
+.point-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);}
+.point-card:active{transform:scale(.98);}
+.point-ico{
+  width:44px;height:44px;border-radius:14px;flex:none;
+  background:var(--grad-icon);display:grid;place-items:center;color:#fff;
+  box-shadow:0 4px 12px rgba(76,175,80,.28);
+}
+.point-ico .icon{width:24px;height:24px;stroke-width:2;}
+.point-name{font-weight:800;font-size:1rem;line-height:1.25;}
+.point-prev{
+  font-size:.82rem;color:var(--text-2);line-height:1.45;min-height:1px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.point-prev.empty{color:var(--text-mute);font-style:italic;}
+.count-badge{
+  position:absolute;top:13px;right:13px;
+  min-width:24px;height:24px;padding:0 7px;border-radius:999px;
+  background:var(--chip-bg);color:var(--green-d2);
+  font-weight:800;font-size:.72rem;display:grid;place-items:center;
+}
+html[data-theme="dark"] .count-badge{color:var(--green-l1);}
+
+/* =========================================================
+   关于本站（页脚）
+   ========================================================= */
+.about{
+  margin-top:42px;padding:24px 20px;border-radius:24px;text-align:center;
+  background:var(--card);border:1px solid var(--card-border);box-shadow:var(--shadow-card);
+}
+.about-title{font-weight:900;font-size:1.05rem;cursor:pointer;user-select:none;display:inline-flex;align-items:center;gap:7px;}
+.about-title .icon{width:18px;height:18px;color:var(--green);}
+.about-text{margin:10px auto 0;max-width:42ch;font-size:.86rem;color:var(--text-2);line-height:1.65;}
+.about-foot{margin-top:14px;font-size:.72rem;color:var(--text-mute);font-weight:700;letter-spacing:.5px;}
+
+/* =========================================================
+   点位详情页
+   ========================================================= */
+.detail-top{display:flex;align-items:center;gap:10px;padding:18px 0 6px;}
+.btn-back{
+  min-width:44px;min-height:44px;width:44px;height:44px;border-radius:14px;
+  background:var(--card);border:1px solid var(--card-border);
+  display:grid;place-items:center;color:var(--text-2);box-shadow:var(--shadow-card);
+}
+.btn-back .icon{width:22px;height:22px;}
+.btn-back:hover{transform:translateY(-2px);color:var(--green-d2);}
+.btn-back:active{transform:scale(.94);}
+.detail-top h1{font-size:1.3rem;font-weight:900;margin:0;}
+
+.overview{
+  background:var(--card);border:1px solid var(--card-border);border-radius:28px;
+  padding:22px;box-shadow:var(--shadow-card);margin-top:8px;
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+}
+.overview-head{display:flex;align-items:center;gap:15px;}
+.overview-ico{
+  width:64px;height:64px;border-radius:20px;flex:none;
+  background:var(--grad-icon);display:grid;place-items:center;color:#fff;
+  box-shadow:0 6px 18px rgba(76,175,80,.3);
+}
+.overview-ico .icon{width:34px;height:34px;}
+.overview-head h2{margin:0;font-size:1.32rem;font-weight:900;}
+.overview-desc{margin:3px 0 0;color:var(--text-2);font-size:.9rem;font-weight:600;}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px;}
+.stat{
+  background:var(--field-bg);border:1px solid var(--card-border-2);border-radius:16px;
+  padding:13px 8px;text-align:center;
+}
+.stat b{display:block;font-size:1.5rem;font-weight:900;color:var(--green-d2);line-height:1;}
+html[data-theme="dark"] .stat b{color:var(--green);}
+.stat span{font-size:.72rem;color:var(--text-mute);font-weight:700;}
+
+/* 主按钮（全宽 pill） */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  min-height:52px;padding:0 26px;border-radius:999px;
+  font-weight:800;font-size:1.02rem;color:#fff;
+  background:var(--grad-btn);box-shadow:0 8px 22px rgba(76,175,80,.34);
+}
+.btn .icon{width:20px;height:20px;}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(76,175,80,.42);}
+.btn:active{transform:scale(.97);}
+.btn-block{display:flex;width:100%;margin-top:18px;}
+.btn-ghost{
+  background:var(--card);color:var(--green-d2);border:1.5px solid var(--field-border);
+  box-shadow:var(--shadow-card);
+}
+html[data-theme="dark"] .btn-ghost{color:var(--green);}
+.btn-ghost:hover{box-shadow:var(--shadow-hover);}
+
+/* 时间线 */
+.timeline{margin-top:30px;}
+.post{
+  background:var(--card);border:1px solid var(--card-border);border-radius:22px;
+  padding:17px;box-shadow:var(--shadow-card);margin-bottom:13px;
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+}
+.post-head{display:flex;align-items:center;gap:11px;margin-bottom:10px;}
+.avatar{
+  width:40px;height:40px;border-radius:50%;flex:none;
+  background:var(--grad-icon);color:#fff;display:grid;place-items:center;
+  font-weight:900;font-size:1.04rem;box-shadow:0 3px 10px rgba(76,175,80,.28);
+}
+.post-name{font-weight:800;font-size:.96rem;}
+.post-text{font-size:.97rem;line-height:1.6;color:var(--text);white-space:pre-wrap;word-break:break-word;}
+.post-imgs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;}
+.post-imgs.n1{grid-template-columns:minmax(0,62%);}
+.post-imgs.n2{grid-template-columns:repeat(2,1fr);}
+.post-imgs img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px;cursor:pointer;border:1px solid var(--card-border-2);}
+.post-imgs img:active{transform:scale(.97);}
+.empty-state{
+  text-align:center;padding:38px 20px;color:var(--text-mute);
+  background:var(--card);border:1px dashed var(--field-border);border-radius:22px;
+}
+.empty-state .icon{width:38px;height:38px;opacity:.6;margin-bottom:8px;color:var(--green-l1);}
+.empty-state p{margin:0;font-weight:700;font-size:.9rem;}
+
+/* 二维码 */
+.qr-block{
+  margin-top:34px;text-align:center;padding:26px 20px;border-radius:28px;
+  background:var(--card);border:1px solid var(--card-border);box-shadow:var(--shadow-card);
+}
+.qr-canvas{display:inline-flex;padding:14px;border-radius:18px;background:rgba(255,255,255,0.5);}
+html[data-theme="dark"] .qr-canvas{background:rgba(255,255,255,0.06);}
+.qr-canvas img,.qr-canvas canvas{display:block;}
+.qr-cap{margin-top:14px;font-size:.82rem;color:var(--text-2);font-weight:700;}
+
+/* =========================================================
+   Modal · 通用遮罩
+   ========================================================= */
+.overlay-mask{
+  position:fixed;inset:0;z-index:200;background:var(--overlay);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  opacity:0;pointer-events:none;transition:opacity .26s ease;
+}
+.overlay-mask.show{opacity:1;pointer-events:auto;}
+
+/* 底部弹出 Sheet（发布表单） */
+.sheet{
+  position:fixed;left:0;right:0;bottom:0;z-index:210;
+  background:var(--card-solid);border-radius:28px 28px 0 0;
+  max-height:92vh;display:flex;flex-direction:column;
+  transform:translateY(102%);transition:transform .34s cubic-bezier(.22,1,.36,1);
+  box-shadow:0 -10px 40px rgba(0,0,0,.18);
+  padding-bottom:env(safe-area-inset-bottom);
+}
+.sheet.show{transform:translateY(0);}
+.sheet-inner{max-width:560px;margin:0 auto;width:100%;}
+.handle{width:44px;height:5px;border-radius:999px;background:var(--text-mute);opacity:.4;margin:11px auto 4px;}
+.sheet-scroll{overflow-y:auto;padding:8px 20px 22px;}
+.sheet-title{font-size:1.18rem;font-weight:900;margin:6px 0 4px;}
+.sheet-sub{font-size:.82rem;color:var(--text-mute);font-weight:700;margin-bottom:16px;}
+
+/* 居中 Modal（管理员） */
+.modal-card{
+  position:fixed;left:50%;top:50%;z-index:210;transform:translate(-50%,-46%) scale(.96);
+  width:min(620px,calc(100vw - 28px));max-height:88vh;
+  background:var(--card-solid);border-radius:28px;display:flex;flex-direction:column;
+  box-shadow:0 24px 70px rgba(0,0,0,.34);opacity:0;pointer-events:none;
+  transition:opacity .26s ease,transform .26s cubic-bezier(.22,1,.36,1);
+}
+.modal-card.show{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1);}
+.modal-head{display:flex;align-items:center;justify-content:space-between;padding:20px 20px 8px;}
+.modal-head h2{margin:0;font-size:1.2rem;font-weight:900;}
+.modal-close{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--field-bg);color:var(--text-2);}
+.modal-close .icon{width:20px;height:20px;}
+.modal-close:hover{color:var(--green-d2);}
+.modal-scroll{overflow-y:auto;padding:6px 20px 22px;}
+
+/* 表单字段 */
+.field-label{font-weight:800;font-size:.86rem;margin:18px 0 8px;display:flex;align-items:center;gap:6px;}
+.field-label:first-child{margin-top:4px;}
+.uploader{
+  border:1.8px dashed var(--field-border);border-radius:18px;
+  padding:20px;text-align:center;color:var(--text-2);background:var(--field-bg);
+  min-height:88px;display:grid;place-items:center;
+}
+.uploader .icon{width:30px;height:30px;color:var(--green);margin-bottom:6px;}
+.uploader b{font-weight:800;font-size:.92rem;}
+.uploader small{display:block;color:var(--text-mute);font-weight:700;font-size:.74rem;margin-top:3px;}
+.uploader:hover{border-color:var(--green);background:var(--chip-bg);}
+.previews{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;}
+.preview{position:relative;width:84px;height:84px;border-radius:14px;overflow:hidden;border:1px solid var(--card-border-2);}
+.preview img{width:100%;height:100%;object-fit:cover;}
+.preview .del{
+  position:absolute;top:3px;right:3px;width:24px;height:24px;border-radius:50%;
+  background:rgba(0,0,0,.6);color:#fff;display:grid;place-items:center;
+}
+.preview .del .icon{width:14px;height:14px;stroke-width:2.6;}
+.field{
+  width:100%;border-radius:16px;border:1.5px solid var(--field-border);
+  background:var(--field-bg);color:var(--text);font-family:inherit;font-size:1rem;
+  padding:13px 15px;resize:vertical;
+}
+.field:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(76,175,80,.16);}
+textarea.field{min-height:96px;line-height:1.55;}
+.counter{text-align:right;font-size:.74rem;color:var(--text-mute);font-weight:700;margin-top:5px;}
+.counter.warn{color:#E57373;}
+/* 署名 Tabs */
+.tabs{display:flex;gap:8px;background:var(--field-bg);padding:5px;border-radius:16px;border:1px solid var(--card-border-2);}
+.tab{
+  flex:1;min-height:44px;border-radius:12px;font-weight:800;font-size:.9rem;
+  color:var(--text-2);display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.tab.active{background:var(--grad-btn);color:#fff;box-shadow:0 4px 12px rgba(76,175,80,.3);}
+
+/* 管理员统计 + tabs */
+.admin-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;}
+.admin-stat{background:var(--field-bg);border:1px solid var(--card-border-2);border-radius:16px;padding:13px 6px;text-align:center;}
+.admin-stat b{display:block;font-size:1.5rem;font-weight:900;color:var(--green-d2);line-height:1;}
+html[data-theme="dark"] .admin-stat b{color:var(--green);}
+.admin-stat span{font-size:.7rem;color:var(--text-mute);font-weight:700;}
+.seg{display:flex;gap:8px;margin-bottom:16px;}
+.seg button{
+  flex:1;min-height:44px;border-radius:13px;font-weight:800;font-size:.9rem;
+  background:var(--field-bg);color:var(--text-2);border:1px solid var(--card-border-2);
+}
+.seg button.active{background:var(--grad-btn);color:#fff;border-color:transparent;}
+.review-card{background:var(--field-bg);border:1px solid var(--card-border-2);border-radius:18px;padding:15px;margin-bottom:12px;}
+.review-meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:9px;}
+.review-meta .when{font-size:.74rem;color:var(--text-mute);font-weight:700;}
+.review-text{font-size:.92rem;line-height:1.5;white-space:pre-wrap;word-break:break-word;}
+.review-imgs{display:flex;gap:7px;margin-top:10px;flex-wrap:wrap;}
+.review-imgs img{width:56px;height:56px;object-fit:cover;border-radius:10px;cursor:pointer;}
+.review-actions{display:flex;gap:9px;margin-top:13px;}
+.mini-btn{
+  min-height:44px;padding:0 16px;border-radius:999px;font-weight:800;font-size:.86rem;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.mini-btn .icon{width:16px;height:16px;}
+.mini-approve{background:var(--grad-btn);color:#fff;flex:1;justify-content:center;}
+.mini-del{background:rgba(229,57,53,.12);color:#E53935;}
+html[data-theme="dark"] .mini-del{background:rgba(229,115,115,.18);color:#EF9A9A;}
+.mini-btn:active{transform:scale(.96);}
+
+/* admin: 大区筛选下拉 */
+.admin-filter{
+  display:flex;align-items:center;gap:10px;margin:0 0 14px;
+  background:var(--field-bg);border:1px solid var(--card-border-2);
+  border-radius:14px;padding:10px 14px;
+}
+.admin-filter label{font-size:.78rem;font-weight:800;color:var(--text-2);white-space:nowrap;}
+.admin-filter select{
+  flex:1;border:1.5px solid var(--field-border);background:var(--card-solid);color:var(--text);
+  font:inherit;font-weight:700;font-size:.88rem;padding:9px 12px;border-radius:11px;
+  cursor:pointer;-webkit-appearance:none;appearance:none;
+  background-image:linear-gradient(45deg,transparent 50%,var(--green-d2) 50%),linear-gradient(135deg,var(--green-d2) 50%,transparent 50%);
+  background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;
+  background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:34px;
+}
+html[data-theme="dark"] .admin-filter select{background-image:linear-gradient(45deg,transparent 50%,var(--green) 50%),linear-gradient(135deg,var(--green) 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat;}
+.admin-filter select:focus{outline:2px solid var(--green);outline-offset:1px;}
+.review-path{max-width:100%;}
+
+/* =========================================================
+   大区概览页：面包屑 + 楼层 Tab + 子点位列表
+   ========================================================= */
+.crumb{
+  display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+  padding:2px 4px 14px;font-size:.8rem;font-weight:700;color:var(--text-mute);
+}
+.crumb-seg{
+  background:var(--chip-bg);color:var(--green-d2);
+  padding:5px 11px;border-radius:999px;cursor:pointer;
+  transition:background .18s ease,transform .12s ease;
+  -webkit-tap-highlight-color:transparent;
+  border:1px solid var(--card-border-2);
+}
+html[data-theme="dark"] .crumb-seg{color:var(--green-l1);}
+.crumb-seg:active{transform:scale(.96);}
+.crumb-seg.crumb-current{
+  background:var(--grad-btn);color:#fff;border-color:transparent;cursor:default;
+}
+.crumb-seg.crumb-current:active{transform:none;}
+.crumb-sep{color:var(--text-mute);font-weight:700;user-select:none;}
+
+.group-overview .stats-2{grid-template-columns:repeat(2,1fr);}
+
+.floor-tabs{
+  display:flex;gap:8px;overflow-x:auto;
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+  padding:4px 2px 14px;margin:0 -4px 4px;
+}
+.floor-tab{
+  flex:0 0 auto;scroll-snap-align:start;
+  min-height:40px;padding:9px 18px;border-radius:999px;
+  background:transparent;color:var(--text-2);font-weight:800;font-size:.92rem;
+  border:1.5px solid var(--field-border);cursor:pointer;
+  transition:background .18s ease,color .18s ease,border-color .18s ease,transform .12s ease;
+  -webkit-tap-highlight-color:transparent;white-space:nowrap;
+}
+.floor-tab:active{transform:scale(.96);}
+.floor-tab.active{
+  background:var(--grad-btn);color:#fff;border-color:transparent;
+  box-shadow:0 4px 14px rgba(76,175,80,.22);
+}
+html[data-theme="dark"] .floor-tab.active{box-shadow:0 4px 14px rgba(0,0,0,.4);}
+
+.floor-pane{display:none;}
+.floor-pane.active{display:block;animation:fadeFloor .28s cubic-bezier(.22,1,.36,1) both;}
+@keyframes fadeFloor{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+.child-list{display:flex;flex-direction:column;gap:0;}
+.child-row{
+  display:flex;align-items:flex-start;gap:13px;
+  background:var(--card);border:1px solid var(--card-border);
+  border-radius:18px;padding:14px 14px;margin-bottom:10px;
+  box-shadow:var(--shadow-card);cursor:pointer;
+  transition:transform .14s ease,box-shadow .18s ease;
+  -webkit-tap-highlight-color:transparent;
+  text-decoration:none;color:inherit;
+}
+.child-row:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);}
+.child-row:active{transform:scale(.99);}
+.child-row-ico{
+  flex:0 0 auto;width:42px;height:42px;border-radius:13px;
+  background:var(--grad-icon);color:#fff;display:grid;place-items:center;
+  box-shadow:0 3px 10px rgba(76,175,80,.22);
+}
+.child-row-ico .icon{width:21px;height:21px;}
+.child-row-body{flex:1;min-width:0;}
+.child-row-head{
+  display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+  margin-bottom:3px;
+}
+.child-row-name{font-weight:800;font-size:.97rem;color:var(--text);}
+.child-row-count{
+  flex:0 0 auto;font-size:.74rem;font-weight:800;color:var(--green-d2);
+  background:var(--chip-bg);padding:3px 10px;border-radius:999px;
+  border:1px solid var(--card-border-2);
+}
+html[data-theme="dark"] .child-row-count{color:var(--green-l1);}
+.child-row-prev{
+  font-size:.82rem;color:var(--text-2);line-height:1.5;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+  overflow:hidden;text-overflow:ellipsis;
+}
+.child-row-prev.empty{color:var(--text-mute);font-style:italic;}
+
+/* =========================================================
+   内容安全：关怀弹窗 + 管理面板（拦截记录 / 词库管理）
+   ========================================================= */
+/* 全屏居中遮罩，层级高于发布表单 */
+.care-overlay{
+  position:fixed;inset:0;z-index:400;display:grid;place-items:center;padding:20px;
+  background:rgba(20,40,25,.5);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  opacity:0;pointer-events:none;transition:opacity .28s ease;
+}
+.care-overlay.show{opacity:1;pointer-events:auto;}
+.care-card{
+  width:min(520px,100%);max-height:90vh;overflow-y:auto;
+  background:var(--card-solid);border-radius:28px;
+  padding:30px 26px 22px;text-align:center;
+  border:1px solid var(--card-border-2);
+  box-shadow:0 30px 80px rgba(0,0,0,.4);
+  transform:translateY(14px) scale(.98);transition:transform .3s cubic-bezier(.22,1,.36,1);
+  background-image:linear-gradient(180deg,var(--chip-bg),transparent 220px);
+}
+.care-overlay.show .care-card{transform:translateY(0) scale(1);}
+.care-logo{
+  width:60px;height:60px;border-radius:20px;margin:0 auto 14px;
+  display:grid;place-items:center;background:var(--grad-icon);color:#fff;
+  box-shadow:0 8px 22px rgba(76,175,80,.34);
+}
+.care-logo .icon{width:30px;height:30px;}
+.care-card.accent-civility .care-logo{background:linear-gradient(135deg,#FFB74D,#FB8C00);box-shadow:0 8px 22px rgba(251,140,0,.3);}
+.care-title{font-size:1.32rem;font-weight:700;line-height:1.35;margin:0 0 16px;color:var(--text);}
+.care-body{text-align:left;font-size:.95rem;line-height:1.75;color:var(--text-2);}
+.care-body p{margin:0 0 12px;}
+.care-body b{color:var(--text);font-weight:700;}
+.care-body a{color:var(--green-d2);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--green-l2);}
+html[data-theme="dark"] .care-body a{color:var(--green-l1);}
+.care-steps{
+  background:var(--chip-bg);border:1px solid var(--card-border-2);
+  border-radius:18px;padding:16px 18px;margin:14px 0;
+}
+.care-steps-title{font-weight:700;color:var(--text);margin-bottom:8px;font-size:.92rem;}
+.care-steps ol{margin:0;padding-left:20px;}
+.care-steps li{margin-bottom:8px;}
+.care-warm{text-align:center;font-size:1rem;line-height:1.9;color:var(--green-d2);margin-top:18px;}
+html[data-theme="dark"] .care-warm{color:var(--green-l1);}
+/* 占位二维码（请替换为实际图片） */
+.care-qr{display:flex;flex-direction:column;align-items:center;gap:8px;margin:14px 0;}
+.care-qr-box{
+  width:128px;height:128px;border-radius:16px;display:grid;place-items:center;gap:4px;
+  background:repeating-conic-gradient(var(--green-l3) 0% 25%,transparent 0% 50%) 50%/16px 16px,var(--card-solid);
+  border:2px dashed var(--green-l1);color:var(--green-d2);text-align:center;
+}
+.care-qr-box .icon{width:26px;height:26px;}
+.care-qr-box span{font-size:.7rem;font-weight:700;}
+.care-qr-cap{font-size:.74rem;color:var(--text-mute);font-weight:600;text-align:center;line-height:1.5;}
+.care-actions{display:flex;flex-direction:column;gap:10px;margin-top:22px;}
+.care-actions .btn{min-height:52px;font-size:1rem;}
+.care-primary{background:var(--grad-btn);}
+.care-foot{
+  font-size:.78rem;color:var(--text-mute);line-height:1.7;margin:16px 4px 2px;
+  text-align:center;font-weight:600;
+}
+
+/* 管理面板：可折叠区块 */
+.admin-section{
+  margin-top:14px;border:1px solid var(--card-border-2);border-radius:18px;
+  background:var(--field-bg);overflow:hidden;
+}
+.admin-section>summary{
+  list-style:none;cursor:pointer;padding:15px 16px;font-weight:800;font-size:.92rem;
+  display:flex;align-items:center;gap:8px;color:var(--text);-webkit-tap-highlight-color:transparent;
+}
+.admin-section>summary::-webkit-details-marker{display:none;}
+.admin-section>summary::after{content:'▾';margin-left:auto;color:var(--text-mute);transition:transform .2s ease;}
+.admin-section[open]>summary::after{transform:rotate(180deg);}
+.sec-count{
+  background:var(--chip-bg);color:var(--green-d2);font-size:.72rem;font-weight:800;
+  padding:2px 9px;border-radius:999px;border:1px solid var(--card-border-2);
+}
+html[data-theme="dark"] .sec-count{color:var(--green-l1);}
+.filter-tip{font-size:.76rem;color:var(--text-mute);line-height:1.6;padding:0 16px 12px;font-weight:600;}
+
+/* 拦截记录列表 */
+.flag-list{padding:0 12px;display:flex;flex-direction:column;gap:9px;max-height:300px;overflow-y:auto;}
+.flag-empty{padding:8px 16px 16px;color:var(--text-mute);font-size:.85rem;font-weight:600;}
+.flag-card{background:var(--card-solid);border:1px solid var(--card-border-2);border-radius:14px;padding:11px 13px;}
+.flag-top{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap;}
+.flag-tag{font-size:.7rem;font-weight:800;padding:2px 9px;border-radius:999px;color:#fff;background:var(--green);}
+.flag-tag.fl-crisis{background:#E53935;}
+.flag-tag.fl-distress{background:#FB8C00;}
+.flag-tag.fl-abuse{background:#8E24AA;}
+.flag-tag.fl-violence{background:#6D4C41;}
+.flag-tag.fl-inapp{background:#3949AB;}
+.flag-card .when{font-size:.72rem;color:var(--text-mute);font-weight:600;}
+.flag-text{font-size:.88rem;line-height:1.5;color:var(--text-2);word-break:break-word;}
+
+/* 敏感词 / 白名单管理 */
+#filterMgr{padding:0 12px;}
+.word-group{margin-bottom:16px;}
+.word-group-head{font-weight:800;font-size:.84rem;color:var(--text);margin-bottom:8px;display:flex;align-items:center;gap:7px;}
+.word-count{background:var(--chip-bg);color:var(--green-d2);font-size:.68rem;font-weight:800;padding:1px 8px;border-radius:999px;}
+html[data-theme="dark"] .word-count{color:var(--green-l1);}
+.word-chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:9px;}
+.word-empty{color:var(--text-mute);font-size:.8rem;font-style:italic;}
+.word-chip{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--card-solid);border:1px solid var(--card-border-2);
+  border-radius:999px;padding:5px 6px 5px 12px;font-size:.82rem;font-weight:700;color:var(--text);
+}
+.word-chip.wl{background:var(--chip-bg);border-color:var(--green-l2);color:var(--green-d2);}
+html[data-theme="dark"] .word-chip.wl{color:var(--green-l1);}
+.word-chip button{
+  width:20px;height:20px;border-radius:50%;display:grid;place-items:center;
+  background:var(--field-bg);color:var(--text-mute);font-size:15px;line-height:1;font-weight:700;
+}
+.word-chip button:hover{background:#E57373;color:#fff;}
+.word-input{padding:10px 13px;font-size:.9rem;}
+
+/* =========================================================
+   Lightbox / Toast / 拾取按钮
+   ========================================================= */
+.lightbox{
+  position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.93);
+  display:grid;place-items:center;padding:24px;
+  opacity:0;pointer-events:none;transition:opacity .24s ease;
+}
+.lightbox.show{opacity:1;pointer-events:auto;}
+.lightbox img{max-width:100%;max-height:88vh;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.6);}
+.lightbox .lb-close{
+  position:absolute;top:max(18px,env(safe-area-inset-top));right:18px;
+  width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;
+  display:grid;place-items:center;backdrop-filter:blur(6px);
+}
+.lightbox .lb-close .icon{width:24px;height:24px;}
+
+.toast-wrap{position:fixed;left:0;right:0;bottom:30px;z-index:400;display:flex;justify-content:center;pointer-events:none;padding:0 20px;}
+.toast{
+  background:var(--green-d2);color:#fff;font-weight:800;font-size:.92rem;
+  padding:14px 22px;border-radius:999px;box-shadow:0 12px 34px rgba(27,94,32,.4);
+  transform:translateY(24px);opacity:0;transition:opacity .3s ease,transform .3s ease;
+  max-width:90vw;text-align:center;
+}
+html[data-theme="dark"] .toast{background:rgba(102,187,106,.92);color:#06140A;}
+.toast.show{transform:translateY(0);opacity:1;}
+
+.fab{
+  position:fixed;right:18px;bottom:max(22px,env(safe-area-inset-bottom));z-index:150;
+  width:52px;height:52px;border-radius:50%;background:var(--card-solid);
+  border:1px solid var(--card-border);box-shadow:var(--shadow-hover);
+  display:grid;place-items:center;color:var(--green-d2);
+}
+.fab .icon{width:24px;height:24px;}
+.fab.active{background:var(--grad-btn);color:#fff;}
+.fab:active{transform:scale(.92);}
+html[data-theme="dark"] .fab{color:var(--green);}
+
+.pick-info{
+  position:fixed;left:50%;bottom:84px;transform:translateX(-50%);z-index:151;
+  background:var(--card-solid);border:1px solid var(--card-border);border-radius:16px;
+  padding:13px 16px;box-shadow:var(--shadow-hover);max-width:92vw;
+  font-size:.82rem;font-weight:700;color:var(--text);
+  opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;text-align:center;
+}
+.pick-info.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.pick-info code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--green-d2);font-weight:800;}
+html[data-theme="dark"] .pick-info code{color:var(--green-l1);}
+.pick-info small{display:block;color:var(--text-mute);font-size:.72rem;margin-top:4px;}
+
+/* fade-in 列表动画 */
+@keyframes rise{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.rise{animation:rise .4s cubic-bezier(.22,1,.36,1) both;}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media(min-width:500px){
+  .grid{grid-template-columns:repeat(3,1fr);}
+  .rail-card{flex-basis:46%;}
+}
+@media(max-width:360px){
+  .slogan{letter-spacing:.01em;}
+  .header-actions .label-txt{display:none;}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;transition-duration:.001ms !important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== Header ===================== -->
+<header class="header">
+  <div class="header-inner">
+    <div class="brand" id="brand" title="">
+      <div class="brand-logo"><svg class="icon"><use href="#icon-logo"/></svg></div>
+      <div class="brand-name">
+        <b id="siteName">校园瞬间</b>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn" id="langBtn" aria-label="language">
+        <svg class="icon"><use href="#icon-lang"/></svg><span class="label-txt" id="langTxt">EN</span>
+      </button>
+      <button class="icon-btn square" id="themeBtn" aria-label="theme">
+        <svg class="icon"><use href="#icon-moon"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== App（首页 / 详情页 渲染容器） ===================== -->
+<main id="app" class="wrap"></main>
+
+<!-- ===================== 通用遮罩 ===================== -->
+<div class="overlay-mask" id="mask"></div>
+
+<!-- ===================== 发布表单（底部 Sheet） ===================== -->
+<section class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="handle"></div>
+  <div class="sheet-inner">
+    <div class="sheet-scroll">
+      <div class="sheet-title" id="sheetTitle">发布我的瞬间</div>
+      <div class="sheet-sub" id="sheetSub"></div>
+
+      <div class="field-label" id="lblPhoto"><svg class="icon"><use href="#icon-image"/></svg>添加照片</div>
+      <label class="uploader" id="uploader">
+        <input type="file" accept="image/*" multiple id="fileInput" hidden>
+        <div>
+          <svg class="icon"><use href="#icon-image"/></svg>
+          <b id="upMain">点击添加照片</b>
+          <small id="upSub">最多 3 张 · 单张 ≤ 2MB</small>
+        </div>
+      </label>
+      <div class="previews" id="previews"></div>
+
+      <div class="field-label" id="lblText"><svg class="icon"><use href="#icon-edit"/></svg>此刻的心情</div>
+      <textarea class="field" id="textInput" maxlength="300" placeholder=""></textarea>
+      <div class="counter" id="counter">0 / 300</div>
+
+      <div class="field-label" id="lblName">署名方式</div>
+      <div class="tabs">
+        <button class="tab active" id="tabAnon" data-mode="anon">🙈 <span id="anonTxt">完全匿名</span></button>
+        <button class="tab" id="tabNick" data-mode="nick">✏️ <span id="nickTxt">自定义昵称</span></button>
+      </div>
+      <input type="text" class="field" id="nickInput" maxlength="20" placeholder="" style="margin-top:10px;display:none;">
+
+      <button class="btn btn-block" id="submitPost"><svg class="icon"><use href="#icon-spark"/></svg><span id="submitTxt">提交瞬间</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 管理员审核面板 ===================== -->
+<section class="modal-card" id="adminModal" role="dialog" aria-modal="true">
+  <div class="modal-head">
+    <h2 id="adminTitle">审核面板</h2>
+    <button class="modal-close" id="adminClose"><svg class="icon"><use href="#icon-close"/></svg></button>
+  </div>
+  <div class="modal-scroll">
+    <div class="admin-stats">
+      <div class="admin-stat"><b id="stTotal">0</b><span id="stTotalL">总投稿</span></div>
+      <div class="admin-stat"><b id="stPend">0</b><span id="stPendL">待审核</span></div>
+      <div class="admin-stat"><b id="stAppr">0</b><span id="stApprL">已通过</span></div>
+    </div>
+    <div class="seg">
+      <button class="active" id="segPend" data-tab="pending"></button>
+      <button id="segAppr" data-tab="approved"></button>
+    </div>
+    <div class="admin-filter">
+      <label id="adminAreaLbl" for="adminAreaSel">按大区筛选</label>
+      <select id="adminAreaSel"></select>
+    </div>
+    <div id="reviewList"></div>
+    <button class="btn btn-ghost btn-block" id="exportBtn"><svg class="icon"><use href="#icon-download"/></svg><span id="exportTxt">导出已审核投稿 (JSON)</span></button>
+
+    <!-- 内容拦截记录 -->
+    <details class="admin-section" id="flagSection">
+      <summary><span id="flagSecTitle">内容拦截记录</span><span class="sec-count" id="flagCount">0</span></summary>
+      <div class="filter-tip" id="flagTip">命中敏感词被拦截的内容会记录在这里（未发布、仅本机可见）。</div>
+      <div id="flagList" class="flag-list"></div>
+      <button class="btn btn-ghost btn-block" id="clearFlagsBtn"><svg class="icon"><use href="#icon-close"/></svg><span id="clearFlagsTxt">清空拦截记录</span></button>
+    </details>
+
+    <!-- 敏感词 & 白名单管理 -->
+    <details class="admin-section" id="filterSection">
+      <summary><span id="filterSecTitle">敏感词 & 白名单管理</span></summary>
+      <div class="filter-tip" id="filterTip">增删后立即生效，保存在本机浏览器。白名单短语可放行被误伤的中性表达。</div>
+      <div id="filterMgr"></div>
+      <button class="btn btn-ghost btn-block" id="resetFilterBtn"><svg class="icon"><use href="#icon-spark"/></svg><span id="resetFilterTxt">恢复默认词库</span></button>
+    </details>
+  </div>
+</section>
+
+<!-- ===================== 心理支持 / 关怀引导弹窗（全屏居中） ===================== -->
+<div class="care-overlay" id="careOverlay" role="dialog" aria-modal="true" aria-labelledby="careTitle">
+  <div class="care-card accent-crisis" id="careCard">
+    <!-- 请替换为实际的心理咨询 logo 和二维码图片 -->
+    <div class="care-logo" aria-hidden="true"><svg class="icon"><use href="#icon-spark"/></svg></div>
+    <h2 class="care-title" id="careTitle"></h2>
+    <div class="care-body" id="careBody"></div>
+    <div class="care-actions">
+      <button class="btn btn-block care-primary" id="carePrimary">我知道了</button>
+      <button class="btn btn-ghost btn-block care-secondary" id="careSecondary">去钉钉预约</button>
+    </div>
+    <p class="care-foot" id="careFoot"></p>
+  </div>
+</div>
+
+<!-- ===================== Lightbox ===================== -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose"><svg class="icon"><use href="#icon-close"/></svg></button>
+  <img id="lbImg" src="" alt="">
+</div>
+
+<!-- ===================== Toast ===================== -->
+<div class="toast-wrap"><div class="toast" id="toast"></div></div>
+
+<script>
+/* =========================================================
+   1. 数据：点位 / 区域 / i18n
+   ========================================================= */
+const STORE_KEY = 'campus_mood_v4';
+
+const AREAS = {
+  o:{zh:'户外场地', en:'Outdoor'},
+  i:{zh:'室内区域', en:'Indoor'}
+};
+const AREA_ORDER = ['o','i'];
+
+/* =========================================================
+   点位数据（v4）：2 个户外场地 + 3 个咖啡厅 / 室内区域 + 1 个主楼（含 4 个楼层）
+   pos：地图引脚百分比 [left%, top%]，请对照实际 campus-map.png 微调
+   二级子点位（children）按编号升序严格排列，禁止改变顺序
+   ========================================================= */
+const POINTS = [
+
+  /* ─────────── 户外场地 ─────────── */
+
+  // 剧院（保留原有四个功能区）
+  { id:'theater', type:'group', area:'o', icon:'icon-theater', pos:[43,32], hasFloors:false,
+    name:{zh:'剧院', en:'Theatre'},
+    desc:{zh:'灯光暗下，故事亮起来', en:'Lights down, stories up'},
+    floors:[
+      _fl('_','所有区域','All Areas',
+        _ch('theater_stage','舞台','Stage','聚光灯亮起的那一秒','The instant the spotlight hits'),
+        _ch('theater_audience','观众席','Audience Seats','一起屏住呼吸的地方','Where everyone holds their breath'),
+        _ch('theater_backstage','后台','Backstage','慌张又兴奋的待命区','Nervous, excited, waiting'),
+        _ch('theater_dressing','化妆间','Dressing Room','镜子里的另一个自己','Another you in the mirror')
+      )
+    ]
+  },
+
+  // 体育馆（单点位）
+  { id:'gym', type:'single', area:'o', icon:'icon-gym', pos:[30,52],
+    name:{zh:'体育馆', en:'Gymnasium'},
+    desc:{zh:'球鞋摩擦地板的青春声响', en:'Sneakers squeaking, hearts racing'}
+  },
+
+  /* ─────────── 室内区域 ─────────── */
+
+  // 旧咖啡厅（3 个子区域，无楼层 Tab）
+  { id:'old_cafe', type:'group', area:'i', icon:'icon-cafe', pos:[25,45], hasFloors:false,
+    name:{zh:'旧咖啡厅', en:'Old Café'},
+    desc:{zh:'咖啡香气与旧时光', en:'Coffee and quiet nostalgia'},
+    floors:[
+      _fl('_','全部区域','All Areas',
+        _ch('old_cafe_1f','旧咖啡厅1F','Old Café · Floor 1','熟悉的座位与橱窗的光','Your favourite seat, the window light'),
+        _ch('old_cafe_2f','旧咖啡厅2F','Old Café · Floor 2','俯看走廊的旧楼梯','Old stairs overlooking the hall'),
+        _ch('old_cafe_quiet','旧咖啡厅·静音仓','Old Café · Quiet Booth','一个人，一杯咖啡，足够了','Just you, a coffee, and silence')
+      )
+    ]
+  },
+
+  // 新咖啡厅（2 个子区域，无楼层 Tab）
+  { id:'new_cafe', type:'group', area:'i', icon:'icon-cafe', pos:[55,55], hasFloors:false,
+    name:{zh:'新咖啡厅', en:'New Café'},
+    desc:{zh:'新开业的另一个角落', en:'The newer corner for a brew'},
+    floors:[
+      _fl('_','全部区域','All Areas',
+        _ch('new_cafe_1f','新咖啡厅1F','New Café · Floor 1','还没被记满的位置','Still finding its story'),
+        _ch('new_cafe_2f','新咖啡厅2F','New Café · Floor 2','楼上的阳光更长一些','A little more sunlight upstairs')
+      )
+    ]
+  },
+
+  // 主楼（4 层楼层 Tab；子点位严格按编号升序排列）
+  { id:'main_bldg', type:'group', area:'i', icon:'icon-building', pos:[60,35], hasFloors:true,
+    name:{zh:'主楼', en:'Main Building'},
+    desc:{zh:'学习与相遇都在这里', en:'Where learning meets everyday life'},
+    floors:[
+
+      // ── 1F ──
+      _fl('f1','1F','Floor 1',
+        _ch('main_f1_library',  '图书馆',        'Library',               '书页之间，光阴静止','Time stops between pages'),
+        _ch('main_f1_c111',     'C111 小剧场',   'C111 Mini Theatre',     '台前幕后，每次都是首演','Every show is opening night'),
+        _ch('main_f1_c113',     'C113 多功能厅', 'C113 Multi-function Hall','会议、讲座与偶尔的掌声','Meetings, talks, and applause')
+      ),
+
+      // ── 2F（14 个教室组，编号升序：C201→C237）──
+      _fl('f2','2F','Floor 2',
+        _ch('main_f2_c201','C202-C201','C202-C201','二楼的光与课桌之间','Light between desks on the 2nd floor'),
+        _ch('main_f2_c203','C204-C203','C204-C203','二楼的光与课桌之间','Light between desks on the 2nd floor'),
+        _ch('main_f2_c205','C206-C205','C206-C205','二楼的光与课桌之间','Light between desks on the 2nd floor'),
+        _ch('main_f2_c207','C208-C207','C208-C207','二楼的光与课桌之间','Light between desks on the 2nd floor'),
+        _ch('main_f2_c209','C210-C209','C210-C209','二楼的光与课桌之间','Light between desks on the 2nd floor'),
+        _ch('main_f2_c211','C212-C211','C212-C211','二楼的光与课桌之间','Light between desks on the 2nd floor'),
+        _ch('main_f2_c217','C218-C217','C218-C217','二楼的光与课桌之间','Light between desks on the 2nd floor'),
+        _ch('main_f2_c219','C220-C219','C220-C219','二楼的光与课桌之间','Light between desks on the 2nd floor'),
+        _ch('main_f2_c221','C222-C221','C222-C221','二楼的光与课桌之间','Light between desks on the 2nd floor'),
+        _ch('main_f2_c223','C224-C223','C224-C223','二楼的光与课桌之间','Light between desks on the 2nd floor'),
+        _ch('main_f2_c225','C226-C225','C226-C225','二楼的光与课桌之间','Light between desks on the 2nd floor'),
+        _ch('main_f2_c227','C228-C227','C228-C227','二楼的光与课桌之间','Light between desks on the 2nd floor'),
+        _ch('main_f2_c230','C231-C230','C231-C230','二楼的光与课桌之间','Light between desks on the 2nd floor'),
+        _ch('main_f2_c236','C237-C236','C237-C236','二楼的光与课桌之间','Light between desks on the 2nd floor')
+      ),
+
+      // ── 3F（15 个教室组，编号升序：C301→C334）──
+      _fl('f3','3F','Floor 3',
+        _ch('main_f3_c301','C302-C301','C302-C301','三楼走廊的气息','The quiet hallway of Floor 3'),
+        _ch('main_f3_c303','C304-C303','C304-C303','三楼走廊的气息','The quiet hallway of Floor 3'),
+        _ch('main_f3_c305','C306-C305','C306-C305','三楼走廊的气息','The quiet hallway of Floor 3'),
+        _ch('main_f3_c307','C308-C307','C308-C307','三楼走廊的气息','The quiet hallway of Floor 3'),
+        _ch('main_f3_c309','C310-C309','C310-C309','三楼走廊的气息','The quiet hallway of Floor 3'),
+        _ch('main_f3_c311','C312-C311','C312-C311','三楼走廊的气息','The quiet hallway of Floor 3'),
+        _ch('main_f3_c314','C315-C314','C315-C314','三楼走廊的气息','The quiet hallway of Floor 3'),
+        _ch('main_f3_c317','C317',     'C317',     '三楼走廊的气息','The quiet hallway of Floor 3'),
+        _ch('main_f3_c318','C319-C318','C319-C318','三楼走廊的气息','The quiet hallway of Floor 3'),
+        _ch('main_f3_c323','C324-C323','C324-C323','三楼走廊的气息','The quiet hallway of Floor 3'),
+        _ch('main_f3_c325','C326-C325','C326-C325','三楼走廊的气息','The quiet hallway of Floor 3'),
+        _ch('main_f3_c327','C328-C327','C328-C327','三楼走廊的气息','The quiet hallway of Floor 3'),
+        _ch('main_f3_c329','C330-C329','C330-C329','三楼走廊的气息','The quiet hallway of Floor 3'),
+        _ch('main_f3_c331','C332-C331','C332-C331','三楼走廊的气息','The quiet hallway of Floor 3'),
+        _ch('main_f3_c333','C334-C333','C334-C333','三楼走廊的气息','The quiet hallway of Floor 3')
+      ),
+
+      // ── 4F（13 个区域，静音仓在前，教室组编号升序：C401→C434）──
+      _fl('f4','4F','Floor 4',
+        _ch('main_f4_quiet','静音仓',    'Quiet Booth',  '一个人的安静角落','A private quiet corner'),
+        _ch('main_f4_c401','C402-C401','C402-C401','四楼的高处与晴天','Floor 4 light and open sky'),
+        _ch('main_f4_c403','C404-C403','C404-C403','四楼的高处与晴天','Floor 4 light and open sky'),
+        _ch('main_f4_c405','C406-C405','C406-C405','四楼的高处与晴天','Floor 4 light and open sky'),
+        _ch('main_f4_c407','C408-C407','C408-C407','四楼的高处与晴天','Floor 4 light and open sky'),
+        _ch('main_f4_c409','C410-C409','C410-C409','四楼的高处与晴天','Floor 4 light and open sky'),
+        _ch('main_f4_c411','C412-C411','C412-C411','四楼的高处与晴天','Floor 4 light and open sky'),
+        _ch('main_f4_c423','C424-C423','C424-C423','四楼的高处与晴天','Floor 4 light and open sky'),
+        _ch('main_f4_c425','C426-C425','C426-C425','四楼的高处与晴天','Floor 4 light and open sky'),
+        _ch('main_f4_c427','C428-C427','C428-C427','四楼的高处与晴天','Floor 4 light and open sky'),
+        _ch('main_f4_c429','C430-C429','C430-C429','四楼的高处与晴天','Floor 4 light and open sky'),
+        _ch('main_f4_c431','C432-C431','C432-C431','四楼的高处与晴天','Floor 4 light and open sky'),
+        _ch('main_f4_c433','C434-C433','C434-C433','四楼的高处与晴天','Floor 4 light and open sky')
+      )
+    ]
+  }
+];
+
+/* 紧凑构造工具，让 POINTS 数据更可读 */
+function _ch(id, zh, en, zhDesc, enDesc){
+  return { id, name:{zh,en}, desc:{zh:zhDesc, en:enDesc} };
+}
+function _fl(floorId, zh, en, ...children){
+  return { floorId, floorName:{zh,en}, children };
+}
+
+
+/* 顶级 id → 顶级点位（group 或 single） */
+const POINT_MAP = Object.fromEntries(POINTS.map(p=>[p.id,p]));
+
+/* 构建子点位索引：childId → {group, floor, child} */
+const CHILD_MAP = (()=>{
+  const m={};
+  for(const p of POINTS){
+    if(p.type!=='group') continue;
+    for(const fl of p.floors){
+      for(const ch of fl.children){
+        m[ch.id] = { group:p, floor:fl, child:ch };
+      }
+    }
+  }
+  return m;
+})();
+
+/* 解析任意 id，返回 {kind, point, parent?, floor?}，未知返回 null */
+function resolvePoint(id){
+  const top = POINT_MAP[id];
+  if(top) return { kind: top.type, point: top };
+  const c = CHILD_MAP[id];
+  if(c) return { kind:'child', point:c.child, parent:c.group, floor:c.floor };
+  return null;
+}
+
+/* 收集大区所有子点位 id */
+function groupChildIds(groupId){
+  const g = POINT_MAP[groupId];
+  if(!g || g.type!=='group') return [];
+  const out=[];
+  g.floors.forEach(f=>f.children.forEach(c=>out.push(c.id)));
+  return out;
+}
+
+/* 当前语言下的完整路径文本（用于审核列表 / 导出 JSON） */
+function fullPathText(id, lang){
+  const c = CHILD_MAP[id];
+  if(c){
+    const ln = (o)=> (o && (o[lang]||o.zh)) || '';
+    const parts = [ ln(c.group.name) ];
+    if(c.group.hasFloors) parts.push(ln(c.floor.floorName));
+    parts.push(ln(c.child.name));
+    return parts.join(' › ');
+  }
+  const g = POINT_MAP[id];
+  if(g) return (g.name[lang]||g.name.zh);
+  return id;
+}
+
+const I18N = {
+  zh:{
+    siteName:'校园瞬间', brandTip:'回到首页',
+    sloganSub:'扫码留下此刻，让记忆有迹可循。',
+    langBtn:'EN',
+    secLatest:'全校最新', secLatestHint:'横向滑动',
+    secMap:'校园平面图', secMapHint:'点击引脚探索',
+    points:'个点位',
+    aboutTitle:'关于本站', 
+    aboutText:'记录每一个角落，每一个瞬间。',
+    aboutFoot:'扫码留下你的瞬间 · 此时 此地 此刻',
+    share:'发布我的瞬间', shareShort:'发布瞬间',
+    timeline:'时间线', noPost:'还没有人留下瞬间，来做第一个吧 ✨',
+    statPost:'投稿', statSharer:'分享者', statImg:'含图片',
+    qrCap:'将此二维码张贴于现场 · ',
+    sheetTitle:'发布我的瞬间', sheetSub:'你的瞬间将匿名提交，审核通过后出现在时间线。',
+    lblPhoto:'添加照片', lblText:'此刻的心情', lblName:'署名方式',
+    upMain:'点击添加照片', upSub:'最多 3 张 · 单张 ≤ 2MB',
+    anon:'完全匿名', nick:'自定义昵称', anonName:'匿名',
+    textPh:'写下此刻的心情……哪怕只有一句话。',
+    nickPh:'给自己起个名字（留空仍为匿名）',
+    submit:'提交瞬间',
+    toastSubmit:'已提交！审核通过后即可看到 ✨',
+    toastTooBig:'图片超过 2MB，已跳过', toastMax:'最多上传 3 张',
+    toastEmpty:'写点什么再提交吧～', toastCopied:'坐标已复制到剪贴板 📋',
+    toastCopyFail:'复制失败，请手动记录坐标', toastApproved:'已通过 ✓', toastDeleted:'已删除',
+    toastSaveFail:'保存失败：存储空间可能已满', toastExported:'已导出 JSON ✓', toastNoExport:'暂无已审核投稿可导出',
+    adminTitle:'审核面板', stTotal:'总投稿', stPend:'待审核', stAppr:'已通过',
+    segPend:'待审核', segAppr:'已通过', export:'导出已审核投稿 (JSON)',
+    noPend:'暂无待审核投稿', noAppr:'暂无已通过投稿',
+    approve:'通过', del:'删除',
+    pickOn:'坐标拾取已开启 · 点击地图任意位置',
+    pickOff:'已退出坐标拾取',
+    pickHint:'已复制 · 再次点击按钮退出',
+    moments:'条瞬间', noChildPosts:'还没有人留下瞬间',
+    filterArea:'按大区筛选', filterAll:'全部'
+  },
+  en:{
+    siteName:'Campus Moments', brandTip:'Back to home',
+    sloganSub:'Capture the small, tender now — turning campus corners into memories of youth.',
+    langBtn:'中文',
+    secLatest:'Latest Moments', secLatestHint:'swipe',
+    secMap:'Campus Map', secMapHint:'tap a pin',
+    points:' spots',
+    aboutTitle:'About', 
+    aboutText:'High-school years are full of pressure and choices, and it is easy to overlook the small, tender, real moments of daily life. Here we gather the quiet vitality of everyone on campus — so every corner can hold countless memories of youth.',
+    aboutFoot:'Scan to leave your moment · At the Moment',
+    share:'Share My Moment', shareShort:'Share',
+    timeline:'Timeline', noPost:'No moments yet — be the first one ✨',
+    statPost:'Posts', statSharer:'Sharers', statImg:'With photos',
+    qrCap:'Post this QR code on site · ',
+    sheetTitle:'Share My Moment', sheetSub:'Your moment is submitted anonymously and appears once approved.',
+    lblPhoto:'Add photos', lblText:'How you feel right now', lblName:'Sign as',
+    upMain:'Tap to add photos', upSub:'Up to 3 · ≤ 2MB each',
+    anon:'Anonymous', nick:'Custom name', anonName:'Anonymous',
+    textPh:'Write down this moment… even just one line.',
+    nickPh:'Pick a name (leave blank to stay anonymous)',
+    submit:'Submit',
+    toastSubmit:'Submitted! It will appear once approved ✨',
+    toastTooBig:'Image over 2MB, skipped', toastMax:'Up to 3 photos',
+    toastEmpty:'Write something first ~', toastCopied:'Coordinates copied 📋',
+    toastCopyFail:'Copy failed, please note it manually', toastApproved:'Approved ✓', toastDeleted:'Deleted',
+    toastSaveFail:'Save failed: storage may be full', toastExported:'Exported JSON ✓', toastNoExport:'No approved posts to export',
+    adminTitle:'Review Panel', stTotal:'Total', stPend:'Pending', stAppr:'Approved',
+    segPend:'Pending', segAppr:'Approved', export:'Export approved posts (JSON)',
+    noPend:'No pending posts', noAppr:'No approved posts',
+    approve:'Approve', del:'Delete',
+    pickOn:'Picker on · tap anywhere on the map',
+    pickOff:'Picker off',
+    pickHint:'Copied · tap the button again to exit',
+    moments:'moments', noChildPosts:'No moments here yet',
+    filterArea:'Filter by area', filterAll:'All'
+  }
+};
+
+/* =========================================================
+   2. 工具函数
+   ========================================================= */
+function esc(s){
+  return String(s==null?'':s).replace(/[&<>"']/g,c=>(
+    {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]
+  ));
+}
+function uid(){return 'p'+Date.now()+Math.random().toString(36).slice(2,7);}
+function t(k){return (I18N[state.lang]&&I18N[state.lang][k])||I18N.zh[k]||k;}
+function pName(p){return p.name[state.lang]||p.name.zh;}
+function pDesc(p){return p.desc[state.lang]||p.desc.zh;}
+
+function relTime(iso){
+  const now=Date.now(), then=new Date(iso).getTime();
+  const d=Math.max(0,now-then), m=60000,h=3600000,day=86400000;
+  const zh=state.lang==='zh';
+  if(d<m) return zh?'刚刚':'just now';
+  if(d<h){const n=Math.floor(d/m);return zh?`${n}分钟前`:`${n} min ago`;}
+  if(d<day){const n=Math.floor(d/h);return zh?`${n}小时前`:`${n} h ago`;}
+  if(d<7*day){const n=Math.floor(d/day);return zh?`${n}天前`:`${n} d ago`;}
+  const dt=new Date(iso);
+  const mm=String(dt.getMonth()+1).padStart(2,'0'),dd=String(dt.getDate()).padStart(2,'0');
+  return zh?`${mm}月${dd}日`:`${mm}/${dd}`;
+}
+
+/* =========================================================
+   3. localStorage 数据层
+   ========================================================= */
+function loadData(){
+  try{
+    const raw=localStorage.getItem(STORE_KEY);
+    if(raw){const d=JSON.parse(raw); if(d&&Array.isArray(d.posts)) return d;}
+  }catch(e){console.warn('读取失败',e);}
+  const seed={posts:[]};
+  saveData(seed); return seed;
+}
+function saveData(d){
+  try{localStorage.setItem(STORE_KEY,JSON.stringify(d)); return true;}
+  catch(e){console.warn('保存失败',e); return false;}
+}
+function getPosts(){return DB.posts;}
+function approvedFor(id){
+  // group → 聚合所有子点位投稿；single/child → 直接匹配
+  const top = POINT_MAP[id];
+  if(top && top.type==='group'){
+    const ids = new Set(groupChildIds(id));
+    return DB.posts.filter(p=>ids.has(p.pointId)&&p.status==='approved')
+      .sort((a,b)=>new Date(b.time)-new Date(a.time));
+  }
+  return DB.posts.filter(p=>p.pointId===id&&p.status==='approved').sort((a,b)=>new Date(b.time)-new Date(a.time));
+}
+function latestApproved(n){return DB.posts.filter(p=>p.status==='approved').sort((a,b)=>new Date(b.time)-new Date(a.time)).slice(0,n);}
+
+/* =========================================================
+   3.5 内容安全：分级敏感词 + 白名单 + 检测 + 拦截记录
+   说明：词库存在独立 localStorage（campus_filter_v1），
+   即使投稿数据版本升级也不会丢失；管理员可在后台增删，实时生效。
+   ========================================================= */
+const FILTER_KEY = 'campus_filter_v1';
+
+// 默认词库（管理员可在后台修改）
+const DEFAULT_FILTER = {
+  // 1. 重度危机 → 阻止 + 心理支持弹窗（优先级最高，白名单也无法绕过）
+  crisis:['自杀','自尽','自残','割腕','跳楼','跳河','上吊','想死','不想活','活不下去','死了算了','杀了我','结束生命','自我了断','轻生','寻短见'],
+  // 2. 中度情绪 → 阻止 + 温和关怀弹窗
+  distress:['抑郁','绝望','崩溃','痛苦','心累','撑不下去','受不了了','难受死了','生不如死','想消失','想逃离','无助','孤独到死','没有希望'],
+  // 3. 脏话 / 人身攻击 → 阻止 + 友善提示
+  abuse:['傻逼','煞笔','尼玛','他妈','操你','草泥马','贱人','婊子','垃圾','废物','去死','滚蛋','白痴','弱智','脑残','智障','神经病','有病','恶心','不要脸','你妈','妈的'],
+  // 4. 暴力 / 攻击性 → 阻止 + 尊重他人提示
+  violence:['打死','杀了你','弄死','捅死','揍你','砍你','撕碎','炸了','灭了你','报复','同归于尽','见血','打爆'],
+  // 5. 不良信息 → 阻止 + 提示
+  inappropriate:['约炮','一夜情','裸聊','色情','黄片','嫖','卖淫','招嫖','磕药','吸毒','大麻','冰毒','卖号','代考'],
+  // 白名单短语：命中则放行（仅危机词可凌驾其上）。可加入易误伤的中性词组。
+  whitelist:['作业写到崩溃','复习到崩溃','考试考崩溃','题目难到崩溃','论文写不出','背书背到想死','游戏打到崩溃','连跪到想死','笑到崩溃','笑死','好玩到想死','可爱死了','帅死了','忙死了','累死了','困死了','饿死了','热死了','冷死了','烦死了','气死了','emo了','破防了','玉玉了','操场','操作','体操','靠窗','可靠','依靠','靠近']
+};
+
+const FILTER_CATS = [
+  {key:'crisis',        zh:'重度危机词',     en:'Crisis'},
+  {key:'distress',      zh:'中度情绪词',     en:'Distress'},
+  {key:'abuse',         zh:'脏话 / 人身攻击', en:'Abuse'},
+  {key:'violence',      zh:'暴力 / 攻击性',   en:'Violence'},
+  {key:'inappropriate', zh:'不良信息',       en:'Inappropriate'},
+  {key:'whitelist',     zh:'白名单（放行）',  en:'Whitelist'}
+];
+
+function loadFilter(){
+  try{
+    const raw=localStorage.getItem(FILTER_KEY);
+    if(raw){ const d=JSON.parse(raw); if(d&&typeof d==='object'){
+      const out={};
+      for(const k of Object.keys(DEFAULT_FILTER)) out[k]=Array.isArray(d[k])?d[k].slice():DEFAULT_FILTER[k].slice();
+      return out;
+    }}
+  }catch(e){console.warn('词库读取失败',e);}
+  const def={}; for(const k of Object.keys(DEFAULT_FILTER)) def[k]=DEFAULT_FILTER[k].slice();
+  return def;
+}
+function saveFilter(){ try{localStorage.setItem(FILTER_KEY,JSON.stringify(FILTER));return true;}catch(e){return false;} }
+let FILTER = loadFilter();
+
+/* 检测：返回 {action:'pass'} 或 {action:'block', category, word}
+   优先级：危机 > 白名单 > 情绪 > 脏话 > 暴力 > 不良 */
+function moderateText(raw){
+  const text=(raw||'').toLowerCase();
+  if(!text) return {action:'pass'};
+  const hit=(list)=>{ for(const w of (list||[])){ const k=(w||'').trim().toLowerCase(); if(k&&text.includes(k)) return w; } return null; };
+  const c=hit(FILTER.crisis);        if(c) return {action:'block',category:'crisis',word:c};
+  if(hit(FILTER.whitelist))           return {action:'pass'};   // 白名单放行（危机词除外）
+  const d=hit(FILTER.distress);      if(d) return {action:'block',category:'distress',word:d};
+  const a=hit(FILTER.abuse);         if(a) return {action:'block',category:'abuse',word:a};
+  const v=hit(FILTER.violence);      if(v) return {action:'block',category:'violence',word:v};
+  const i=hit(FILTER.inappropriate); if(i) return {action:'block',category:'inappropriate',word:i};
+  return {action:'pass'};
+}
+
+/* 拦截记录（写入后台，供管理员查看） */
+function logFlag(text, category, pointId){
+  if(!Array.isArray(DB.flags)) DB.flags=[];
+  DB.flags.unshift({ id:uid(), text, category, pointId, time:new Date().toISOString() });
+  if(DB.flags.length>200) DB.flags.length=200; // 仅保留最近 200 条
+  saveData(DB);
+}
+
+/* 弹窗文案（按命中类型返回不同内容；危机/情绪含心理咨询引导） */
+function careContent(category){
+  if(category==='crisis'){
+    return {
+      accent:'crisis',
+      title:'你好像有些累了，我们很在意你 🌱',
+      body:`<p>亲爱的同学，你好。</p>
+<p>此刻的你，也许正经历一些低落、疲惫或孤单的时刻。请记得：你的感受是真实的，也值得被温柔对待。</p>
+<p>学校一直有一个地方，愿意安静地听你说话——<b>心理咨询中心</b>。这里的老师不会评判你，也不会把你的心事告诉别人。他们只想陪你一起，慢慢理清那些让你难受的事情。</p>
+<div class="care-steps">
+  <div class="care-steps-title">如果你愿意尝试寻求帮助，可以这样预约：</div>
+  <ol>
+    <li>用你的 iPad 打开 <b>钉钉</b>，在"工作台"页面搜索 <b>"心理咨询预约"</b>（认准 logo 哦），在线填写预约表单。</li>
+    <li>提交后，心理老师会根据你留下的信息，主动联系你，一起确定时间和地点。</li>
+    <li>请放心填写真实信息，只有这样老师才能更好地支持到你。</li>
+  </ol>
+  <!-- 请替换为实际的心理咨询 logo 和二维码图片 -->
+  <div class="care-qr">
+    <div class="care-qr-box" role="img" aria-label="心理咨询预约二维码占位">
+      <svg class="icon"><use href="#icon-spark"/></svg><span>二维码占位</span>
+    </div>
+    <div class="care-qr-cap">钉钉 · 心理咨询预约（占位图，请替换为真实二维码）</div>
+  </div>
+  <p>如果在操作中遇到任何问题，可以直接联系 <b>陈行老师</b>（电话：<a href="tel:17771899087">17771899087</a>），她会帮你处理。</p>
+</div>
+<p class="care-warm">你不需要一个人扛着。<br>我们真的，很关心你。<br><b>关爱心灵，我们在你身边。</b></p>`,
+      primary:'我知道了，我会试着寻求帮助',
+      secondary:'去钉钉预约',
+      footer:'你刚才写的内容没有发布出去。如果你只是心情有点差，换一些话再说出来也可以；如果你真的很难受，请一定联系上面的老师。'
+    };
+  }
+  if(category==='distress'){
+    return {
+      accent:'distress',
+      title:'你好像有点不开心，需要聊聊吗？🌱',
+      body:`<p>看到你刚才写下的话，我们有点在意你。</p>
+<p>每个人都会有低落、疲惫的时刻，这很正常，也没关系。如果这种感觉持续了一阵子，找个人说说，或许会轻松一些。</p>
+<p>学校的 <b>心理咨询中心</b> 一直都在，老师不会评判你，也会替你保密。</p>
+<div class="care-steps">
+  <div class="care-steps-title">想预约的话，很简单：</div>
+  <ol>
+    <li>用 iPad 打开 <b>钉钉</b>，在"工作台"搜索 <b>"心理咨询预约"</b>，填写表单。</li>
+    <li>心理老师会主动联系你，约好时间和地点。</li>
+  </ol>
+  <p>遇到问题可以联系 <b>陈行老师</b>（电话：<a href="tel:17771899087">17771899087</a>）。</p>
+</div>`,
+      primary:'我知道了',
+      secondary:'去钉钉预约',
+      footer:'你刚才写的内容没有发布出去。换一些话再说出来也可以；如果你真的很难受，请一定联系上面的老师。'
+    };
+  }
+  // civility：脏话 / 暴力 / 不良信息
+  const lines={
+    abuse:'请用友善的方式表达，这里不欢迎攻击性或谩骂的言论。',
+    violence:'请尊重他人，这里不欢迎带有暴力或威胁的言论。',
+    inappropriate:'这里是校园公共空间，请不要发布不良信息。'
+  };
+  return {
+    accent:'civility',
+    title:'换一种方式，好好说 🌱',
+    body:`<p>${lines[category]||lines.abuse}</p>
+<p>「校园瞬间」想留下的是温柔、真实的日常。换一句更舒服的话，再发一次吧。</p>`,
+    primary:'我知道了，我修改一下',
+    secondary:'',
+    footer:'你刚才写的内容没有发布出去。'
+  };
+}
+
+/* 打开 / 关闭 关怀弹窗（独立全屏遮罩，层级高于发布表单） */
+function openCare(category){
+  const c=careContent(category);
+  const card=$('#careCard');
+  card.className='care-card accent-'+c.accent;
+  $('#careTitle').innerHTML=esc(c.title);
+  $('#careBody').innerHTML=c.body;        // 文案为内置可信 HTML
+  $('#careFoot').textContent=c.footer;
+  const sec=$('#careSecondary');
+  if(c.secondary){ sec.textContent=c.secondary; sec.style.display=''; }
+  else sec.style.display='none';
+  $('#carePrimary').textContent=c.primary;
+  $('#careOverlay').classList.add('show');
+  card.scrollTop=0;
+}
+function closeCare(){ $('#careOverlay').classList.remove('show'); }
+function gotoDing(){
+  // 尝试唤起钉钉 App；若设备未安装则保持弹窗内的文字指引
+  toast('正在尝试打开钉钉…如未跳转，请手动打开钉钉，在工作台搜索"心理咨询预约"');
+  try{ window.location.href='dingtalk://'; }catch(e){}
+}
+
+const $=(s,r=document)=>r.querySelector(s);
+const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+
+const state={
+  lang: localStorage.getItem('cm_lang') || 'zh',
+  theme: localStorage.getItem('cm_theme') ||
+         (window.matchMedia && matchMedia('(prefers-color-scheme:dark)').matches ? 'dark':'light')
+};
+const DB = loadData();
+
+/* =========================================================
+   5. 主题 & 语言
+   ========================================================= */
+function applyTheme(){
+  document.documentElement.setAttribute('data-theme', state.theme==='dark'?'dark':'light');
+  $('#themeBtn').firstElementChild.firstElementChild.setAttribute('href', state.theme==='dark'?'#icon-sun':'#icon-moon');
+  const meta=$('meta[name=theme-color]'); if(meta) meta.content = state.theme==='dark'?'#0D1F10':'#4CAF50';
+}
+function toggleTheme(){
+  state.theme = state.theme==='dark'?'light':'dark';
+  localStorage.setItem('cm_theme', state.theme);
+  applyTheme();
+}
+function applyLang(){
+  document.documentElement.lang = state.lang==='zh'?'zh':'en';
+  // 静态文案
+  $('#siteName').textContent=t('siteName');
+  $('#brand').title=t('brandTip');
+  $('#langTxt').textContent=t('langBtn');
+  // 发布表单
+  $('#sheetTitle').textContent=t('sheetTitle');
+  $('#sheetSub').textContent=t('sheetSub');
+  $('#lblPhoto').lastChild.textContent=t('lblPhoto');
+  $('#lblText').lastChild.textContent=t('lblText');
+  $('#lblName').textContent=t('lblName');
+  $('#upMain').textContent=t('upMain');
+  $('#upSub').textContent=t('upSub');
+  $('#anonTxt').textContent=t('anon');
+  $('#nickTxt').textContent=t('nick');
+  $('#textInput').placeholder=t('textPh');
+  $('#nickInput').placeholder=t('nickPh');
+  $('#submitTxt').textContent=t('submit');
+  // 管理面板
+  $('#adminTitle').textContent=t('adminTitle');
+  $('#stTotalL').textContent=t('stTotal');
+  $('#stPendL').textContent=t('stPend');
+  $('#stApprL').textContent=t('stAppr');
+  $('#segPend').textContent=t('segPend');
+  $('#segAppr').textContent=t('segAppr');
+  $('#exportTxt').textContent=t('export');
+  // 内容安全相关
+  const setTxt=(id,zh,en)=>{ const el=$(id); if(el) el.textContent = state.lang==='zh'?zh:en; };
+  setTxt('#flagSecTitle','内容拦截记录','Blocked content log');
+  setTxt('#flagTip','命中敏感词被拦截的内容会记录在这里（未发布、仅本机可见）。','Blocked submissions are logged here (not published, local only).');
+  setTxt('#clearFlagsTxt','清空拦截记录','Clear log');
+  setTxt('#filterSecTitle','敏感词 & 白名单管理','Keyword & whitelist manager');
+  setTxt('#filterTip','增删后立即生效，保存在本机浏览器。白名单短语可放行被误伤的中性表达。','Changes apply instantly and save locally. Whitelist phrases bypass false positives.');
+  setTxt('#resetFilterTxt','恢复默认词库','Restore defaults');
+  if($('#adminModal').classList.contains('show')){ renderFlagList(); renderFilterAdmin(); }
+  render();
+}
+function toggleLang(){
+  state.lang = state.lang==='zh'?'en':'zh';
+  localStorage.setItem('cm_lang', state.lang);
+  applyLang();
+}
+
+/* =========================================================
+   6. 渲染：首页
+   ========================================================= */
+function avatarChar(name){
+  const s=(name||'').trim(); return s? s[0].toUpperCase() : '?';
+}
+function renderHome(){
+  const app=$('#app');
+  const latest=latestApproved(5);
+
+  // Slogan
+  let slogan = state.lang==='zh'
+    ? `<h1 class="slogan"><span class="w1">此时</span><span class="w2">此地</span><span class="w3">此刻</span></h1>`
+    : `<h1 class="slogan en">At the Moment</h1>`;
+
+  // 最新瞬间 rail（投稿 pointId 可能是子点位或单点位）
+  let railHTML = latest.length ? latest.map(p=>{
+    const r=resolvePoint(p.pointId);
+    // child → 用其父大区图标；single → 用自身图标；unknown → icon-pin
+    const ic = r ? (r.kind==='child' ? r.parent.icon : r.point.icon) : 'icon-pin';
+    const nm = r ? (r.point.name[state.lang]||r.point.name.zh) : p.pointId;
+    return `<div class="rail-card" data-point="${esc(p.pointId)}">
+      <span class="chip"><svg class="icon"><use href="#${ic}"/></svg>${esc(nm)}</span>
+      <div class="rail-text">${esc(p.text)}</div>
+      <span class="meta-time"><svg class="icon"><use href="#icon-clock"/></svg>${relTime(p.time)}</span>
+    </div>`;
+  }).join('') : `<div class="rail-card" style="cursor:default"><div class="rail-text empty">${esc(t('noPost'))}</div></div>`;
+
+  // 点位网格（按区域分组）
+  let gridHTML='';
+  AREA_ORDER.forEach(ak=>{
+    const list=POINTS.filter(p=>p.area===ak);
+    if(!list.length) return;
+    gridHTML += `<div class="area-label">${esc(AREAS[ak][state.lang])}</div><div class="grid">`;
+    gridHTML += list.map(p=>{
+      const posts=approvedFor(p.id);
+      const prev = posts.length ? esc(posts[0].text) : '';
+      return `<div class="point-card" data-point="${esc(p.id)}">
+        <span class="count-badge">${posts.length}</span>
+        <div class="point-ico"><svg class="icon"><use href="#${p.icon}"/></svg></div>
+        <div class="point-name">${esc(pName(p))}</div>
+        <div class="point-prev ${prev?'':'empty'}">${prev||esc(pDesc(p))}</div>
+      </div>`;
+    }).join('');
+    gridHTML += `</div>`;
+  });
+
+  app.innerHTML = `
+    <section class="hero rise">
+      ${slogan}
+      <p class="hero-sub">${esc(t('sloganSub'))}</p>
+    </section>
+
+    <section class="sec">
+      <div class="sec-head">
+        <div class="sec-title"><svg class="icon"><use href="#icon-spark"/></svg>${esc(t('secLatest'))}</div>
+        <div class="sec-hint">${esc(t('secLatestHint'))}</div>
+      </div>
+    </section>
+    <div class="rail no-scrollbar">${railHTML}</div>
+
+    <section class="sec">${gridHTML}</section>
+
+    <section class="about">
+      <div class="about-title" id="aboutTitle"><svg class="icon"><use href="#icon-spark"/></svg>${esc(t('aboutTitle'))}</div>
+      <p class="about-text">${esc(t('aboutText'))}</p>
+      <div class="about-foot">${esc(t('aboutFoot'))}</div>
+    </section>
+  `;
+
+  bindAboutEntry();
+}
+
+/* =========================================================
+   7. 渲染：大区概览页（楼层 Tab + 子点位列表）
+   ========================================================= */
+// 记住每个大区上次选中的楼层，避免重新进入又跳回一楼
+const groupFloorState = {};
+
+function renderGroup(id){
+  const app=$('#app');
+  const g=POINT_MAP[id];
+  if(!g||g.type!=='group'){ location.hash=''; return; }
+
+  const showTabs = !!g.hasFloors;
+  const activeFloorId = groupFloorState[id] || g.floors[0].floorId;
+  const totalPosts = approvedFor(id).length; // 大区聚合
+
+  // 楼层 Tab
+  let tabsHTML='';
+  if(showTabs){
+    tabsHTML = `<div class="floor-tabs no-scrollbar" role="tablist">` + g.floors.map(f=>`
+      <button class="floor-tab ${f.floorId===activeFloorId?'active':''}" role="tab"
+              data-floor-switch="${esc(f.floorId)}" data-group="${esc(id)}">
+        ${esc(f.floorName[state.lang]||f.floorName.zh)}
+      </button>`).join('') + `</div>`;
+  }
+
+  // 每层一个 pane，仅 active pane 可见
+  const panesHTML = g.floors.map(f=>{
+    const rows = f.children.map(ch=>{
+      const posts = approvedFor(ch.id);
+      const hasPosts = posts.length>0;
+      const prev = hasPosts ? esc(posts[0].text) : esc(ch.desc[state.lang]||ch.desc.zh);
+      return `<a class="child-row" data-point="${esc(ch.id)}">
+        <span class="child-row-ico"><svg class="icon"><use href="#icon-pin"/></svg></span>
+        <div class="child-row-body">
+          <div class="child-row-head">
+            <span class="child-row-name">${esc(ch.name[state.lang]||ch.name.zh)}</span>
+            <span class="child-row-count">${posts.length} ${esc(t('moments'))}</span>
+          </div>
+          <div class="child-row-prev ${hasPosts?'':'empty'}">${prev}</div>
+        </div>
+      </a>`;
+    }).join('');
+    return `<div class="floor-pane ${f.floorId===activeFloorId?'active':''}" data-floor-pane="${esc(f.floorId)}">${rows}</div>`;
+  }).join('');
+
+  app.innerHTML = `
+    <div class="detail-top rise">
+      <button class="btn-back" data-act="back" aria-label="back"><svg class="icon"><use href="#icon-back"/></svg></button>
+      <h1>${esc(pName(g))}</h1>
+    </div>
+
+    <section class="overview rise group-overview">
+      <div class="overview-head">
+        <div class="overview-ico"><svg class="icon"><use href="#${g.icon}"/></svg></div>
+        <div><h2>${esc(pName(g))}</h2><p class="overview-desc">${esc(pDesc(g))}</p></div>
+      </div>
+      <div class="stats stats-2">
+        <div class="stat"><b>${totalPosts}</b><span>${esc(t('statPost'))}</span></div>
+        <div class="stat"><b>${groupChildIds(id).length}</b><span>${esc(t('moments'))}·${esc(state.lang==='zh'?'地点':'spots')}</span></div>
+      </div>
+    </section>
+
+    ${tabsHTML}
+    <section class="child-list">${panesHTML}</section>
+  `;
+  window.scrollTo({top:0,behavior:'instant' in document.documentElement.style?'instant':'auto'});
+}
+
+/* =========================================================
+   8. 渲染：点位详情（单点位 / 子点位）
+   ========================================================= */
+function renderPoint(id){
+  const app=$('#app');
+  const r=resolvePoint(id);
+  if(!r || r.kind==='group'){ location.hash=''; return; }
+  // 子点位 → 用 parent 的 icon 与 area，自身的 name/desc
+  const isChild = r.kind==='child';
+  const p = r.point;
+  const icon = isChild ? r.parent.icon : p.icon;
+  const posts=approvedFor(id);
+  const sharers=new Set(posts.map(x=>x.nickname||t('anonName'))).size;
+  const withImg=posts.filter(x=>x.images&&x.images.length).length;
+
+  // 面包屑（仅子点位显示）：大区 [› 楼层] › 当前
+  let crumbHTML='';
+  if(isChild){
+    const parts=[
+      `<a class="crumb-seg" data-point="${esc(r.parent.id)}">${esc(r.parent.name[state.lang]||r.parent.name.zh)}</a>`
+    ];
+    if(r.parent.hasFloors){
+      // 楼层段：可点击但返回到 group（楼层会自动定位到这一层）
+      parts.push(`<a class="crumb-seg" data-point="${esc(r.parent.id)}" data-floor="${esc(r.floor.floorId)}">${esc(r.floor.floorName[state.lang]||r.floor.floorName.zh)}</a>`);
+    }
+    parts.push(`<span class="crumb-seg crumb-current">${esc(p.name[state.lang]||p.name.zh)}</span>`);
+    crumbHTML = `<nav class="crumb">${parts.join('<span class="crumb-sep">›</span>')}</nav>`;
+  }
+
+  const postsHTML = posts.length ? posts.map(po=>{
+    const nm = esc(po.nickname||t('anonName'));
+    const imgs = (po.images&&po.images.length)
+      ? `<div class="post-imgs n${po.images.length}">`+po.images.map(src=>`<img src="${esc(src)}" data-full="${esc(src)}" alt="">`).join('')+`</div>`
+      : '';
+    return `<div class="post rise">
+      <div class="post-head">
+        <div class="avatar">${esc(avatarChar(po.nickname||t('anonName')))}</div>
+        <div><div class="post-name">${nm}</div><span class="meta-time"><svg class="icon"><use href="#icon-clock"/></svg>${relTime(po.time)}</span></div>
+      </div>
+      <div class="post-text">${esc(po.text)}</div>
+      ${imgs}
+    </div>`;
+  }).join('') : `<div class="empty-state"><svg class="icon"><use href="#icon-spark"/></svg><p>${esc(t('noPost'))}</p></div>`;
+
+  // 返回按钮：子点位回到大区，单点位回首页
+  const backTarget = isChild ? `data-point="${esc(r.parent.id)}"` : `data-act="back"`;
+
+  app.innerHTML = `
+    <div class="detail-top rise">
+      <button class="btn-back" ${backTarget} aria-label="back"><svg class="icon"><use href="#icon-back"/></svg></button>
+      <h1>${esc(pName(p))}</h1>
+    </div>
+    ${crumbHTML}
+
+    <section class="overview rise">
+      <div class="overview-head">
+        <div class="overview-ico"><svg class="icon"><use href="#${icon}"/></svg></div>
+        <div><h2>${esc(pName(p))}</h2><p class="overview-desc">${esc(pDesc(p))}</p></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>${posts.length}</b><span>${esc(t('statPost'))}</span></div>
+        <div class="stat"><b>${sharers}</b><span>${esc(t('statSharer'))}</span></div>
+        <div class="stat"><b>${withImg}</b><span>${esc(t('statImg'))}</span></div>
+      </div>
+      <button class="btn btn-block" data-act="share"><svg class="icon"><use href="#icon-plus"/></svg>${esc(t('share'))}</button>
+    </section>
+
+    <section class="timeline">
+      <div class="sec-head">
+        <div class="sec-title"><svg class="icon"><use href="#icon-clock"/></svg>${esc(t('timeline'))}</div>
+        <span class="chip">${posts.length}</span>
+      </div>
+      ${postsHTML}
+    </section>
+
+    <section class="qr-block rise">
+      <div class="qr-canvas" id="qrBox"></div>
+      <div class="qr-cap">${esc(t('qrCap'))}${esc(pName(p))}</div>
+    </section>
+  `;
+  buildQR(id);
+  window.scrollTo({top:0,behavior:'instant' in document.documentElement.style?'instant':'auto'});
+}
+
+/* QR 生成 */
+function buildQR(id){
+  const box=$('#qrBox'); if(!box||typeof QRCode==='undefined') return;
+  box.innerHTML='';
+  const url=location.origin+location.pathname+'#point='+id;
+  try{
+    new QRCode(box,{text:url,width:168,height:168,colorDark:'#2E7D32',colorLight:'rgba(0,0,0,0)',correctLevel:QRCode.CorrectLevel.M});
+  }catch(e){ box.innerHTML='<span style="color:var(--text-mute);font-size:.8rem">QR unavailable</span>'; }
+}
+
+/* =========================================================
+   9. 路由
+   ========================================================= */
+function currentRoute(){
+  const m=location.hash.match(/point=([\w-]+)/);
+  if(!m) return {view:'home'};
+  const id=m[1];
+  const r=resolvePoint(id);
+  if(!r) return {view:'home'};                       // 未知 id → 回首页
+  if(r.kind==='group') return {view:'group', id};    // 大区概览页
+  return {view:'detail', id, kind:r.kind};           // single 或 child → 详情页
+}
+function render(){
+  const r=currentRoute();
+  if(r.view==='group') renderGroup(r.id);
+  else if(r.view==='detail') renderPoint(r.id);
+  else renderHome();
+}
+window.addEventListener('hashchange',render);
+
+/* =========================================================
+   10. Toast / Lightbox
+   ========================================================= */
+let toastTimer;
+function toast(msg){
+  const el=$('#toast'); el.textContent=msg; el.classList.add('show');
+  clearTimeout(toastTimer); toastTimer=setTimeout(()=>el.classList.remove('show'),2500);
+}
+function openLightbox(src){ $('#lbImg').src=src; $('#lightbox').classList.add('show'); }
+function closeLightbox(){ const l=$('#lightbox'); l.classList.remove('show'); setTimeout(()=>{$('#lbImg').src='';},250); }
+
+/* =========================================================
+   10. 遮罩管理
+   ========================================================= */
+function anyModalOpen(){ return $('#sheet').classList.contains('show')||$('#adminModal').classList.contains('show'); }
+function syncMask(){ $('#mask').classList.toggle('show', anyModalOpen()); }
+
+/* =========================================================
+   11. 发布表单
+   ========================================================= */
+let sheetState={ pointId:null, images:[], mode:'anon' };
+const MAX_IMG=3, MAX_BYTES=2*1024*1024;
+
+function openSheet(pointId){
+  sheetState={ pointId, images:[], mode:'anon' };
+  $('#textInput').value=''; $('#nickInput').value=''; $('#nickInput').style.display='none';
+  $('#previews').innerHTML=''; updateCounter();
+  $('#tabAnon').classList.add('active'); $('#tabNick').classList.remove('active');
+  $('#sheet').classList.add('show'); syncMask();
+}
+function closeSheet(){ $('#sheet').classList.remove('show'); syncMask(); }
+
+function updateCounter(){
+  const n=$('#textInput').value.length;
+  const c=$('#counter'); c.textContent=n+' / 300'; c.classList.toggle('warn',n>=300);
+}
+function renderPreviews(){
+  $('#previews').innerHTML=sheetState.images.map((src,i)=>
+    `<div class="preview"><img src="${esc(src)}" alt=""><button class="del" data-del="${i}" aria-label="remove"><svg class="icon"><use href="#icon-close"/></svg></button></div>`
+  ).join('');
+}
+function handleFiles(files){
+  const arr=Array.from(files);
+  for(const f of arr){
+    if(sheetState.images.length>=MAX_IMG){ toast(t('toastMax')); break; }
+    if(!f.type.startsWith('image/')) continue;
+    if(f.size>MAX_BYTES){ toast(t('toastTooBig')); continue; }
+    const reader=new FileReader();
+    reader.onload=e=>{ if(sheetState.images.length<MAX_IMG){ sheetState.images.push(e.target.result); renderPreviews(); } };
+    reader.onerror=()=>toast(t('toastSaveFail'));
+    reader.readAsDataURL(f);
+  }
+}
+function submitPost(){
+  const text=$('#textInput').value.trim();
+  if(!text && sheetState.images.length===0){ toast(t('toastEmpty')); return; }
+
+  // —— 内容安全检测（命中则阻止发布，弹出引导）——
+  if(text){
+    const verdict=moderateText(text);
+    if(verdict.action==='block'){
+      logFlag(text, verdict.category, sheetState.pointId);
+      openCare(verdict.category);
+      return;   // 阻止：不写入 localStorage，不进入审核队列
+    }
+  }
+
+  let nickname='';
+  if(sheetState.mode==='nick'){ nickname=$('#nickInput').value.trim(); }
+  const post={ id:uid(), pointId:sheetState.pointId, text, images:sheetState.images.slice(),
+               nickname, time:new Date().toISOString(), status:'pending' };
+  DB.posts.push(post);
+  if(!saveData(DB)){ DB.posts.pop(); toast(t('toastSaveFail')); return; }
+  closeSheet();
+  toast(t('toastSubmit'));
+}
+
+/* =========================================================
+   12. 管理员审核面板
+   ========================================================= */
+let adminTab='pending';
+let adminAreaFilter='all';      // 'all' | 'o' | 'i'
+function openAdmin(){ adminTab='pending'; adminAreaFilter='all'; renderAdmin(); renderFlagList(); renderFilterAdmin(); $('#adminModal').classList.add('show'); syncMask(); }
+function closeAdmin(){ $('#adminModal').classList.remove('show'); syncMask(); }
+
+/* 拦截记录列表 */
+const FLAG_LABEL={
+  crisis:{zh:'危机',en:'Crisis',cls:'fl-crisis'},
+  distress:{zh:'情绪',en:'Distress',cls:'fl-distress'},
+  abuse:{zh:'脏话',en:'Abuse',cls:'fl-abuse'},
+  violence:{zh:'暴力',en:'Violence',cls:'fl-violence'},
+  inappropriate:{zh:'不良',en:'Bad',cls:'fl-inapp'}
+};
+function renderFlagList(){
+  const box=$('#flagList'); if(!box) return;
+  const flags=DB.flags||[];
+  const cEl=$('#flagCount'); if(cEl) cEl.textContent=flags.length;
+  if(!flags.length){ box.innerHTML=`<div class="flag-empty">${esc(state.lang==='zh'?'暂无拦截记录':'No records')}</div>`; return; }
+  box.innerHTML=flags.map(f=>{
+    const lb=FLAG_LABEL[f.category]||{zh:f.category,en:f.category,cls:''};
+    const path=fullPathText(f.pointId, state.lang);
+    return `<div class="flag-card">
+      <div class="flag-top"><span class="flag-tag ${lb.cls}">${esc(lb[state.lang]||lb.zh)}</span><span class="when">${esc(path)} · ${relTime(f.time)}</span></div>
+      <div class="flag-text">${esc(f.text)}</div>
+    </div>`;
+  }).join('');
+}
+
+/* 敏感词 & 白名单管理 */
+function renderFilterAdmin(){
+  const box=$('#filterMgr'); if(!box) return;
+  box.innerHTML=FILTER_CATS.map(c=>{
+    const words=FILTER[c.key]||[];
+    const chips=words.map((w,i)=>
+      `<span class="word-chip ${c.key==='whitelist'?'wl':''}">${esc(w)}<button data-del-word="${c.key}:${i}" aria-label="删除">×</button></span>`
+    ).join('');
+    const label = state.lang==='zh' ? c.zh : c.en;
+    return `<div class="word-group">
+      <div class="word-group-head">${esc(label)}<span class="word-count">${words.length}</span></div>
+      <div class="word-chips">${chips||`<span class="word-empty">${esc(state.lang==='zh'?'（空）':'(empty)')}</span>`}</div>
+      <input type="text" class="field word-input" data-add-cat="${c.key}" maxlength="20" placeholder="${esc(state.lang==='zh'?'输入词条后按回车添加':'Type word, press Enter')}">
+    </div>`;
+  }).join('');
+}
+
+// 解析投稿的 area（child → 父大区 area；single → 自身 area；未知 → null）
+function postArea(pointId){
+  const r=resolvePoint(pointId);
+  if(!r) return null;
+  return r.kind==='child' ? r.parent.area : r.point.area;
+}
+
+function renderAdmin(){
+  const all=DB.posts;
+  $('#stTotal').textContent=all.length;
+  $('#stPend').textContent=all.filter(p=>p.status==='pending').length;
+  $('#stAppr').textContent=all.filter(p=>p.status==='approved').length;
+  $('#segPend').classList.toggle('active',adminTab==='pending');
+  $('#segAppr').classList.toggle('active',adminTab==='approved');
+
+  // 同步筛选下拉的 label/options（语言切换或刚打开时）
+  const sel=$('#adminAreaSel');
+  if(sel){
+    const cur = sel.value || adminAreaFilter;
+    sel.innerHTML =
+      `<option value="all">${esc(t('filterAll'))}</option>` +
+      AREA_ORDER.map(ak=>`<option value="${ak}">${esc(AREAS[ak][state.lang])}</option>`).join('');
+    sel.value = adminAreaFilter;
+    const lbl=$('#adminAreaLbl'); if(lbl) lbl.textContent=t('filterArea');
+  }
+
+  let list=all.filter(p=>p.status===adminTab);
+  if(adminAreaFilter!=='all') list = list.filter(p=>postArea(p.pointId)===adminAreaFilter);
+  list.sort((a,b)=>new Date(b.time)-new Date(a.time));
+
+  const box=$('#reviewList');
+  if(!list.length){
+    box.innerHTML=`<div class="empty-state"><svg class="icon"><use href="#icon-spark"/></svg><p>${esc(adminTab==='pending'?t('noPend'):t('noAppr'))}</p></div>`;
+    return;
+  }
+  box.innerHTML=list.map(p=>{
+    const r=resolvePoint(p.pointId);
+    const icon = r ? (r.kind==='child' ? r.parent.icon : r.point.icon) : 'icon-pin';
+    const path = fullPathText(p.pointId, state.lang);
+    const imgs=(p.images&&p.images.length)
+      ? `<div class="review-imgs">`+p.images.map(s=>`<img src="${esc(s)}" data-full="${esc(s)}" alt="">`).join('')+`</div>` : '';
+    const actions = p.status==='pending'
+      ? `<div class="review-actions">
+           <button class="mini-btn mini-approve" data-approve="${esc(p.id)}"><svg class="icon"><use href="#icon-check"/></svg>${esc(t('approve'))}</button>
+           <button class="mini-btn mini-del" data-del-post="${esc(p.id)}"><svg class="icon"><use href="#icon-close"/></svg>${esc(t('del'))}</button>
+         </div>`
+      : `<div class="review-actions"><button class="mini-btn mini-del" data-del-post="${esc(p.id)}"><svg class="icon"><use href="#icon-close"/></svg>${esc(t('del'))}</button></div>`;
+    return `<div class="review-card">
+      <div class="review-meta">
+        <span class="chip review-path"><svg class="icon"><use href="#${icon}"/></svg>${esc(path)}</span>
+        <span class="when">${esc(p.nickname||t('anonName'))} · ${relTime(p.time)}</span>
+      </div>
+      <div class="review-text">${esc(p.text)}</div>
+      ${imgs}${actions}
+    </div>`;
+  }).join('');
+}
+function approvePost(id){
+  const p=DB.posts.find(x=>x.id===id); if(!p) return;
+  p.status='approved';
+  if(!saveData(DB)){ p.status='pending'; toast(t('toastSaveFail')); return; }
+  renderAdmin(); refreshIfViewing(p.pointId); toast(t('toastApproved'));
+}
+function deletePost(id){
+  const idx=DB.posts.findIndex(x=>x.id===id); if(idx<0) return;
+  const removed=DB.posts.splice(idx,1)[0];
+  if(!saveData(DB)){ DB.posts.splice(idx,0,removed); toast(t('toastSaveFail')); return; }
+  renderAdmin(); refreshIfViewing(removed.pointId); toast(t('toastDeleted'));
+}
+function refreshIfViewing(pid){
+  const r=currentRoute();
+  if(r.view==='detail' && r.id===pid){ renderPoint(pid); return; }
+  if(r.view==='group'){
+    // 大区视图：若变动的投稿属于本大区的某个子点位，重渲染
+    const ids = new Set(groupChildIds(r.id));
+    if(ids.has(pid)) renderGroup(r.id);
+    return;
+  }
+  if(r.view==='home') renderHome();
+}
+
+function exportJSON(){
+  const approved=DB.posts.filter(p=>p.status==='approved');
+  if(!approved.length){ toast(t('toastNoExport')); return; }
+  const data=approved.map(p=>{
+    const r=resolvePoint(p.pointId);
+    const parentZh = r && r.kind==='child' ? r.parent.name.zh : null;
+    const parentEn = r && r.kind==='child' ? r.parent.name.en : null;
+    return {
+      pointId: p.pointId,
+      path: fullPathText(p.pointId,'zh'),
+      pathEn: fullPathText(p.pointId,'en'),
+      area: postArea(p.pointId),
+      parent: parentZh,
+      parentEn: parentEn,
+      content: p.text,
+      nickname: p.nickname || I18N.zh.anonName,
+      time: p.time,
+      imageCount: (p.images||[]).length
+    };
+  });
+  try{
+    const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=url; a.download='campus_moments_'+new Date().toISOString().slice(0,10)+'.json';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+    toast(t('toastExported'));
+  }catch(e){ toast(t('toastSaveFail')); }
+}
+
+/* =========================================================
+   14. 隐藏管理员入口（关于本站 5 连击 / 长按标题）
+   ========================================================= */
+let aboutClicks=0, aboutTimer;
+function bindAboutEntry(){
+  const el=$('#aboutTitle'); if(!el) return;
+  el.addEventListener('click',()=>{
+    aboutClicks++;
+    clearTimeout(aboutTimer);
+    aboutTimer=setTimeout(()=>aboutClicks=0,2000);
+    if(aboutClicks>=5){ aboutClicks=0; clearTimeout(aboutTimer); openAdmin(); }
+  });
+}
+let lpTimer, lpFired=false;
+function bindLongPress(){
+  const el=$('#brand');
+  const start=()=>{ lpFired=false; lpTimer=setTimeout(()=>{lpFired=true; openAdmin();},2000); };
+  const cancel=()=>clearTimeout(lpTimer);
+  el.addEventListener('pointerdown',start);
+  el.addEventListener('pointerup',cancel);
+  el.addEventListener('pointerleave',cancel);
+  el.addEventListener('pointercancel',cancel);
+}
+
+/* =========================================================
+   15. 事件绑定 & 初始化
+   ========================================================= */
+function init(){
+  applyTheme();
+  applyLang();        // 内部会调用 render()
+
+  // Header
+  $('#brand').addEventListener('click',()=>{ if(lpFired){lpFired=false;return;} location.hash=''; });
+  $('#langBtn').addEventListener('click',toggleLang);
+  $('#themeBtn').addEventListener('click',toggleTheme);
+  bindLongPress();
+
+  // App 内委托：导航 / 返回 / 发布 / 看图 / 楼层切换
+  $('#app').addEventListener('click',e=>{
+    const full=e.target.closest('[data-full]'); if(full){ openLightbox(full.getAttribute('data-full')); return; }
+    // 楼层 Tab 切换：不导航，仅切换可见 pane
+    const tab=e.target.closest('[data-floor-switch]');
+    if(tab){
+      const gid=tab.getAttribute('data-group'), fid=tab.getAttribute('data-floor-switch');
+      groupFloorState[gid]=fid;
+      $$('.floor-tab').forEach(t=>t.classList.toggle('active', t===tab));
+      $$('.floor-pane').forEach(pane=>pane.classList.toggle('active', pane.getAttribute('data-floor-pane')===fid));
+      return;
+    }
+    // 面包屑里带 data-floor 的段：先记住目标楼层，再让 data-point 走默认导航
+    const crumbFloor=e.target.closest('.crumb-seg[data-floor]');
+    if(crumbFloor){
+      const pid=crumbFloor.getAttribute('data-point'), fid=crumbFloor.getAttribute('data-floor');
+      if(pid&&fid) groupFloorState[pid]=fid;
+    }
+    const nav=e.target.closest('[data-point]'); if(nav){ location.hash='point='+nav.getAttribute('data-point'); return; }
+    const act=e.target.closest('[data-act]');
+    if(act){ const a=act.getAttribute('data-act');
+      if(a==='back') location.hash='';
+      if(a==='share'){ const r=currentRoute(); if(r.view==='detail') openSheet(r.id); }
+    }
+  });
+
+  // 发布表单
+  $('#uploader').addEventListener('click',e=>{ if(e.target.closest('input')) return; $('#fileInput').click(); });
+  $('#fileInput').addEventListener('change',e=>{ handleFiles(e.target.files); e.target.value=''; });
+  $('#previews').addEventListener('click',e=>{ const d=e.target.closest('[data-del]'); if(d){ sheetState.images.splice(+d.getAttribute('data-del'),1); renderPreviews(); } });
+  $('#textInput').addEventListener('input',updateCounter);
+  $('#tabAnon').addEventListener('click',()=>{ sheetState.mode='anon'; $('#tabAnon').classList.add('active'); $('#tabNick').classList.remove('active'); $('#nickInput').style.display='none'; });
+  $('#tabNick').addEventListener('click',()=>{ sheetState.mode='nick'; $('#tabNick').classList.add('active'); $('#tabAnon').classList.remove('active'); $('#nickInput').style.display='block'; $('#nickInput').focus(); });
+  $('#submitPost').addEventListener('click',submitPost);
+
+  // 防键盘遮挡：聚焦输入框时滚动到可见
+  ['#textInput','#nickInput'].forEach(sel=>$(sel).addEventListener('focus',()=>{
+    setTimeout(()=>{ try{$(sel).scrollIntoView({block:'center',behavior:'smooth'});}catch(e){} },300);
+  }));
+  if(window.visualViewport){
+    visualViewport.addEventListener('resize',()=>{
+      if($('#sheet').classList.contains('show')){
+        $('#sheet').style.maxHeight=Math.max(300,visualViewport.height*0.94)+'px';
+      }
+    });
+  }
+
+  // 管理面板
+  $('#adminClose').addEventListener('click',closeAdmin);
+  $('#segPend').addEventListener('click',()=>{adminTab='pending';renderAdmin();});
+  $('#segAppr').addEventListener('click',()=>{adminTab='approved';renderAdmin();});
+  $('#adminAreaSel').addEventListener('change',e=>{ adminAreaFilter=e.target.value||'all'; renderAdmin(); });
+  $('#reviewList').addEventListener('click',e=>{
+    const ap=e.target.closest('[data-approve]'); if(ap){ approvePost(ap.getAttribute('data-approve')); return; }
+    const dp=e.target.closest('[data-del-post]'); if(dp){ deletePost(dp.getAttribute('data-del-post')); return; }
+    const full=e.target.closest('[data-full]'); if(full){ openLightbox(full.getAttribute('data-full')); }
+  });
+  $('#exportBtn').addEventListener('click',exportJSON);
+
+  // 关怀弹窗
+  $('#carePrimary').addEventListener('click',closeCare);
+  $('#careSecondary').addEventListener('click',gotoDing);
+  $('#careOverlay').addEventListener('click',e=>{ if(e.target.id==='careOverlay') closeCare(); });
+
+  // 拦截记录：清空
+  $('#clearFlagsBtn').addEventListener('click',()=>{
+    if(!(DB.flags&&DB.flags.length)) return;
+    DB.flags=[]; saveData(DB); renderFlagList();
+    toast(state.lang==='zh'?'已清空拦截记录':'Records cleared');
+  });
+
+  // 敏感词 / 白名单管理：删除（事件委托）
+  $('#filterMgr').addEventListener('click',e=>{
+    const del=e.target.closest('[data-del-word]'); if(!del) return;
+    const [cat,idx]=del.getAttribute('data-del-word').split(':');
+    if(FILTER[cat]){ FILTER[cat].splice(+idx,1); saveFilter(); renderFilterAdmin(); }
+  });
+  // 添加（回车）
+  $('#filterMgr').addEventListener('keydown',e=>{
+    if(e.key!=='Enter') return;
+    const inp=e.target.closest('[data-add-cat]'); if(!inp) return;
+    e.preventDefault();
+    const cat=inp.getAttribute('data-add-cat');
+    const val=inp.value.trim();
+    if(!val){ return; }
+    if(!Array.isArray(FILTER[cat])) FILTER[cat]=[];
+    if(FILTER[cat].some(w=>w.toLowerCase()===val.toLowerCase())){ toast(state.lang==='zh'?'该词条已存在':'Already exists'); inp.value=''; return; }
+    FILTER[cat].push(val); saveFilter(); renderFilterAdmin();
+    toast(state.lang==='zh'?'已添加':'Added');
+  });
+  // 恢复默认词库
+  $('#resetFilterBtn').addEventListener('click',()=>{
+    FILTER={}; for(const k of Object.keys(DEFAULT_FILTER)) FILTER[k]=DEFAULT_FILTER[k].slice();
+    saveFilter(); renderFilterAdmin();
+    toast(state.lang==='zh'?'已恢复默认词库':'Defaults restored');
+  });
+
+  // 遮罩 / Lightbox
+  $('#mask').addEventListener('click',()=>{ closeSheet(); closeAdmin(); });
+  $('#lightbox').addEventListener('click',e=>{ if(e.target.id==='lightbox'||e.target.closest('#lbClose')) closeLightbox(); });
+
+  // ESC
+  document.addEventListener('keydown',e=>{
+    if(e.key!=='Escape') return;
+    if($('#careOverlay').classList.contains('show')) return closeCare();
+    if($('#lightbox').classList.contains('show')) return closeLightbox();
+    if($('#sheet').classList.contains('show')) return closeSheet();
+    if($('#adminModal').classList.contains('show')) return closeAdmin();
+  });
+}
+
+document.addEventListener('DOMContentLoaded',init);
+</script>
+</body>
+</html>
